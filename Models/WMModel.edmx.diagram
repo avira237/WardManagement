@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+<<<<<<< Updated upstream
+      <Diagram DiagramId="631ad083056349ec91c8d9bb65135a9a" Name="Diagram1" ZoomLevel="49">
+        <EntityTypeShape EntityType="WMModel.BOOTHMASTER" Width="1.5" PointX="7.5" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WMModel.MATDANMATHAKMASTER" Width="1.5" PointX="10.5" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="WMModel.PERSONINFO" Width="1.5" PointX="12.75" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WMModel.RESOURCEMASTER" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WMModel.RIGHTMASTER" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WMModel.ROLEMASTER" Width="1.5" PointX="0.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WMModel.SOCIETYMASTER" Width="1.5" PointX="15.75" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="WMModel.USERMASTER" Width="1.5" PointX="3" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WMModel.WARDMASTER" Width="1.5" PointX="5.25" PointY="27.25" IsExpanded="true" />
+=======
+      <Diagram DiagramId="be4b6fb103624cfa8eb594818207624e" Name="Diagram1">
+        <EntityTypeShape EntityType="WMModel.BOOTHMASTER" Width="1.5" PointX="7.5" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WMModel.MATDANMATHAKMASTER" Width="1.5" PointX="10.5" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WMModel.PERSONINFO" Width="1.5" PointX="12.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WMModel.RESOURCEMASTER" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WMModel.RIGHTMASTER" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WMModel.ROLEMASTER" Width="1.5" PointX="0.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WMModel.SOCIETYMASTER" Width="1.5" PointX="15.75" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WMModel.USERMASTER" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WMModel.WARDMASTER" Width="1.5" PointX="5.25" PointY="27.875" IsExpanded="true" />
+>>>>>>> Stashed changes
+        <AssociationConnector Association="WMModel.FK_BOOTHMASTER_MATDANMATHAKMASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="WMModel.FK_BOOTHMASTER_USERMASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="WMModel.FK_BOOTHMASTER_WARDMASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="WMModel.FK_PERSONINFO_BOOTHMASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="WMModel.FK_SOCIETYMASTER_BOOTHMASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="WMModel.FK_MATDANMATHAKMASTER_USERMASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="WMModel.FK_MATDANMATHAKMASTER_WARDMASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="WMModel.FK_PERSONINFO_MATDANMATHAKMASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="WMModel.FK_SOCIETYMASTER_MATDANMATHAKMASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="WMModel.FK_PERSONINFO_SOCIETYMASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="WMModel.FK_PERSONINFO_WARDMASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="WMModel.FK_RIGHTMASTER_RESOURCEMASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="WMModel.FK_RIGHTMASTER_RIGHTMASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="WMModel.FK_RIGHTMASTER_ROLEMASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="WMModel.FK_USERMASTER_ROLEMASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="WMModel.FK_SOCIETYMASTER_WARDMASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="WMModel.FK_WARDMASTER_USERMASTER" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

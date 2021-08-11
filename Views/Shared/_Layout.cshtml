@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/css/navstyle.css" />
+    <script src="~/Scripts/inputmask/inputmask.min.js"></script>
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Scripts/inputmask/jquery.inputmask.js"></script>
+    <script src="~/Scripts/inputmask/bindings/inputmask.binding.js"></script>
+    <script src="~/Scripts/popper-utils.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark py-md-0 py-0 navtop">
+        <div class="navbar-header">
+            <a class="navbar-brand heading" style="font-size:13px !important;">WARD MANAGEMENT SYSTEM</a>
+        </div>
+        <button class="navbar-toggler navbar-toggler-right" style="margin:3px;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="font-size:10px;"></span>
+        </button>
+        <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+
+                <p id="usersession" class="nav-link text-white ml-2 my-sm-0 ">USER : @Session["userID"] </p>
+                <p id="rolesession" class="nav-link text-white ml-2 my-sm-0 ">ROLE : @Session["roleName"] </p>
+            </ul>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-sm nav2">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupported" aria-controls="navbarSupported" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="font-size:10px;"></span>
+        </button>
+        <div class="collapse navbar-collapse text-center" id="navbarSupported">
+            <ul class="navbar-nav drop">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#"><i class="fa fa-plus"></i>&nbsp;MASTER TABLE&nbsp;</a>
+                    <div class="dropdown-menu">
+                        <a class="nav-link dropdown-item" href="/WardMaster/Index?FileOperation=View&Resource=WARDMASTER" id="navbardrop">
+                            <i class="fa fa-plus"></i> &nbsp; WARD MASTER&nbsp;
+                        </a>
+                        <a class="nav-link dropdown-item" href="/MatdanMathak/Index?FileOperation=View&Resource=MATDANMATHAKMASTER" id="navbardrop">
+                            <i class="fa fa-plus"></i>
+                            &nbsp; MATDAN MATHAK MASTER&nbsp;
+                        </a>
+                        <a class="nav-link dropdown-item" href="/Booth/Index?FileOperation=View&Resource=BOOTHMASTER" id="navbardrop">
+                            <i class="fa fa-plus"></i>
+                            &nbsp; BOOTH MASTER&nbsp;
+                        </a>
+                        <a class="nav-link  dropdown-item" href="/Society/Index?FileOperation=View&Resource=SOCIETYMASTER" id="navbardrop">
+                            <i class="fa fa-plus"></i>
+                            &nbsp; SOCIETY MASTER&nbsp;
+                        </a>
+                        <a class="nav-link  dropdown-item" href="/Person/Index?FileOperation=View&Resource=PERSONINFO" id="navbardrop">
+                            <i class="fa fa-plus"></i>
+                            &nbsp; PERSON INFORMATION&nbsp;
+                        </a>
+                        <a class="nav-link  dropdown-item" href="/Role/Index?FileOperation=View&Resource=ROLEMASTER" id="navbardrop">
+                            <i class="fa fa-plus"></i>
+                            &nbsp; RIGHT MASTER&nbsp;
+                        </a>
+                        <a class="nav-link  dropdown-item" href="/Resource/Index?FileOperation=View&Resource=RESOURCEMASTER" id="navbardrop">
+                            <i class="fa fa-plus"></i>
+                            &nbsp; RESOURCE MASTER&nbsp;
+                        </a>
+                        <a class="nav-link  dropdown-item" href="/User/Index?FileOperation=View&Resource=USERMASTER" id="navbardrop">
+                            <i class="fa fa-plus"></i>
+                            &nbsp; USER MASTER&nbsp;
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav drop">
+                <li class="nav-item ">
+                    <a class="nav-link  text-white" href="/Vote/Index?FileOperation=View&Resource=VOTEMASTER"><i class="fa fa-plus"></i>&nbsp;VOTE&nbsp;</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav drop">
+                <li class="nav-item ">
+                    <a class="nav-link  text-white" href="/Chart/Index?FileOperation=View&Resource=CHARTMASTER"><i class="fa fa-plus"></i>&nbsp;REPORT&nbsp;</a>
+                </li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse text-center" id="navbarSupported">
+            <ul class="navbar-nav ml-auto">
+                <a id="btnlogout" class="nav-link text-white p-1 mr-3 ml-2 my-sm-0 bg-danger rounded " href="/Login/Logout"><i class="fa fa-sign-in"></i>	LOG OUT</a>
+            </ul>
+        </div>
+    </nav>
+    @RenderBody()
+    <footer class="footer ">
+        <div class="footer-copyright text-center">
+            ©️ 2020 <a href="http://www.ashviconsultancy.com/" style="color:white"><u>ASHVI CONSULTANCY.</u></a> ALL RIGHTS RESERVED
+        </div>
+    </footer>
+</body>
+</html>

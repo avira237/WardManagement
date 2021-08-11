@@ -1,0 +1,111 @@
+@model WM.Models.BOOTHMASTER
+@{ ViewBag.Title = "Index"; }
+<head>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/WardMaster.css" />
+    <link rel="stylesheet" href="~/css/MatdanMathak.css" />
+    <link rel="stylesheet" href="~/css/CSS_datatable.css" />
+</head>
+<body>
+    <div class="body">
+        <form method="post" name="frmBooth" class="form-inline" id="frmBooth">
+            <div class="c1">
+                <h6>BOOTH MASTER INFORMATION</h6>
+            </div>
+            <div class="container border border-dark p-2 mt-2 pl-lg-4">
+                <div class="row" >
+                    <div class="col-12 form-inline" style=" height:50px;">
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="WARD_ID" class="text-dark col-5 d-flex justify-content-end" id="lbl">WARDNAME:</label>
+                            <input type="hidden" class="form-control" id="ID" name="ID">
+                            <select required="" style="font-size:11px;text-align:left;" class="form-control col-6" id="WARDID" name="WARDID"></select>
+                        </div>
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="MATDAN_ID" class="text-dark col-5 d-flex justify-content-end" id="lbl">MATDANMATHAK NAME :</label>
+                            <select class="form-control col-6" id="MATDANID" name="MATDANID" style="font-size:11px;" required=""></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 form-inline" style=" height:50px;">
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="BoothNo" class="text-dark  col-5 d-flex justify-content-end" id="lbl">BOOTH 1:</label>
+                            <input placeholder="BOOTH 1" required="" type="text" id="BoothNo" name="BoothNo" class="form-control col-6"/>
+                        </div>
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="BoothNo2" class="text-dark col-5 d-flex justify-content-end" id="lbl">BOOTH 2:</label>
+                            <input placeholder="BOOTH 2" type="text" id="BoothNo2" name="BoothNo2" class="form-control col-6" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 form-inline" style=" height:50px;">
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="BoothNo3" class="text-dark col-5 d-flex justify-content-end" id="lbl">BOOTH 3:</label>
+                            <input placeholder="BOOTH 3" type="text" id="BoothNo3" name="BoothNo3" class="form-control col-6"  />
+                        </div>
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="BoothNo4" class="text-dark col-5 d-flex justify-content-end" id="lbl">BOOTH 4:</label>
+                            <input placeholder="BOOTH 4" type="text" id="BoothNo4" name="BoothNo4" class="form-control col-6" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 form-inline" style=" height:50px;">
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="BoothNo5" class="text-dark col-5 d-flex justify-content-end" id="lbl">BOOTH 5:</label>
+                            <input placeholder="BOOTH 5" type="text" id="BoothNo5" name="BoothNo5" class="form-control col-6" />
+                        </div>
+                        <div class="col-6 form-inline" style="height:50px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-success b2" id="btnsave" name="btnsave">
+                            <i class="fa fa-check-circle" aria-hidden="true"></i>
+                            Save
+                        </button>
+                        <button class="btn btn-outline-secondary b2" id="btnload" name="btnload">
+                            <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                            Loading
+                        </button>
+                        <button class="btn btn-success b2" id="btnupdate" name="btnupdate">
+                            <i class="fa fa-check" aria-hidden="true"></i>
+                            Update
+                        </button>
+                        <button class="btn b1" type="reset" id="btnreset">
+                            <i class="fa fa-undo" aria-hidden="true"></i>
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="container-fluid dtborder dtbooth" style="width: 99%;height:100%; margin: auto;margin-top: 20px;margin-bottom: 20px;padding: 10px;padding-bottom:10px;padding-right:10px;text-align: center;">
+        <table id="Boothtbl" class=" table-striped table-bordered cell-border order-column table-responsive nowrap table-responsive-md table-responsive-sm " style="width:100%;margin:auto;">
+                <thead>
+                    <tr>
+                        <th>ACTION</th>
+                        <th>WARD NAME</th>
+                        <th>MATDAN NAME</th>
+                        <th>ADDRESS</th>
+                        <th>MOBILE</th>
+                        <th>BOOTH1</th>
+                        <th>BOOTH2</th>
+                        <th>BOOTH3</th>
+                        <th>BOOTH4</th>
+                        <th>BOOTH5</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <link rel="stylesheet" href="~/css/CSS_datatable.css" />
+    <link rel="stylesheet" href="~/Content/DataTables/css/dataTables.bootstrap4.min.css" />
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Scripts/pagination.js"></script>
+    <script src="~/Scripts/BoothMaster/Index.js"></script>
+</body>

@@ -1,0 +1,117 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<head>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/WardMaster.css" />
+    <link rel="stylesheet" href="~/css/MatdanMathak.css" />
+    <link rel="stylesheet" href="~/css/CSS_datatable.css" />
+</head>
+<body>
+    <div class="body">
+        <form method="post" name="frmuser" class="form-inline" id="frmuser">
+            <div class="c1">
+                <h6>USER MASTER</h6>
+            </div>
+            <div class="container border border-dark p-2 mt-2 pl-lg-4">
+                <div class="row">
+                    <div class="col-12 form-inline" style=" height:50px;">
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="USERID" class="text-dark col-5 d-flex justify-content-end" id="lbl">USER ID :</label>
+                            <input placeholder="USER ID" required="" type="text" id="USERID" name="USERID" class="col-6 form-control" />
+                        </div>
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <input type="hidden" class="form-control" id="ID" name="ID">
+                            <label for="USERNAME" class="text-dark col-4 d-flex justify-content-end" id="lbl">USER NAME:</label>
+                            <input placeholder="USERNAME" required="" type="text" id="USERNAME" name="USERNAME" class="form-control col-6" />
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 form-inline" style=" height:50px;">
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="PASSWORD" class="text-dark col-5 d-flex justify-content-end" id="lbl">PASSWORD :</label>
+                            <input placeholder="PASSWORD" required="" type="PASSWORD" id="PASSWORD" name="PASSWORD" class="form-control col-6" />
+                        </div>
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="MOBILE" class="text-dark col-4 d-flex justify-content-end" id="lbl">MOBILE :</label>
+                            <input placeholder="MOBILE" required="" type="text" id="MOBILE" name="MOBILE" class="col-6 form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 form-inline" style=" height:50px;">
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="EMAIL" class="text-dark col-5 d-flex justify-content-end" id="lbl">EMAIL ID :</label>
+                            <input placeholder="EMAIL ID" type="text" id="EMAIL" name="EMAIL" class="form-control col-6" style="font-size:12px;" />
+                        </div>
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="ROLEID" class="text-dark col-4 d-flex justify-content-end" id="lbl">ROLE NAME :</label>
+                            <select style="font-size:11px;text-align:left;" class="form-control col-6" id="ROLEID" name="ROLEID"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 form-inline" style=" height:50px;">
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="ISLOCKED" class="text-dark col-5 d-flex justify-content-end" id="lbl">IS_LOCKED :</label>
+
+                            <input type="radio" id="True" required="" name="ISLOCKED" value="True" />   <label for="ISLOCKED" class="text-dark" id="lbl" style="margin:4px 0px 8px 4px;">InActive</label>
+                            <input type="radio" required="" id="False" name="ISLOCKED" value="False" style="margin-left:25px;" /> <label for="ISLOCKED" class="text-dark" id="lbl" style="margin:4px 0px 8px 4px;">Active</label>
+                        </div>
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="LOCKEDREASON" class="text-dark col-4 d-flex justify-content-end" id="lbl">LOCKED_REASON :</label>
+                            <input placeholder="LOCKED REASON"  type="text" id="LOCKEDREASON" name="LOCKEDREASON" class="form-control col-6" style="font-size:12px;" />
+                        </div>
+                    </div>
+                </div>
+              
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-success b2" id="btnsave" name="btnsave">
+                            <i class="fa fa-check-circle" aria-hidden="true"></i>
+                            Save
+                        </button>
+                        <button class="btn btn-outline-secondary b2" id="btnload" name="btnload">
+                            <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                            Loading
+                        </button>
+                        <button class="btn btn-success b2" id="btnupdate" name="btnupdate">
+                            <i class="fa fa-check" aria-hidden="true"></i>
+                            Update
+                        </button>
+                        <button class="btn b1" type="reset" id="btnreset">
+                            <i class="fa fa-undo" aria-hidden="true"></i>
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="container-fluid dtborder" style="width: 90%;height:100%; margin: auto;margin-top: 20px;margin-bottom: 20px;padding: 10px;padding-bottom:10px;padding-right:10px;text-align: center;">
+            <table id="usertbl" class=" table-striped table-bordered cell-border order-column nowrap  table-responsive-md table-responsive-sm" style="width:100%;margin:auto;">
+                <thead>
+                    <tr>
+                        <th>ACTION</th>
+                        <th>USER NAME</th>
+                        <th>USER ID</th>                        
+                        <th>EMAIL ID</th>
+                        <th>ROLE NAME</th>
+                        <th>MOBILE</th>
+                        <th>IS_LOCKED</th>
+                        <th>LOCKED_REASON</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <link rel="stylesheet" href="~/css/CSS_datatable.css" />
+    @* <link rel="stylesheet" href="~/Content/DataTables/css/jquery.dataTables.css" />*@
+    <link rel="stylesheet" href="~/Content/DataTables/css/dataTables.bootstrap4.min.css" />
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Scripts/pagination.js"></script>
+    <script src="~/Scripts/UserMaster/Index.js"></script>
+</body>

@@ -1,0 +1,71 @@
+﻿body {
+    font-family: Tahoma;
+    font-size: 12px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+}
+.dataTables_length {
+    text-align: left;
+    display: block;
+}
+
+.container-fluid {
+    font-size: 11px;
+}
+input[type='text'] {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+::placeholder {
+    font-size: 12px;
+}
+table thead tr th {
+    padding: 0px;
+}
+.body {
+    height: 100%;
+    border: 1px solid black;
+    margin: 4px;
+}
+.container1 .row1 {
+    margin-top: 15px;
+}
+#lbl {
+    padding-top: 5px;
+}
+.b1 {
+    background-color: #6c747e;
+    color: white;
+    font-family: Tahoma;
+    font-size: 13px;
+}
+.c1 {
+    background-color: #094d90;
+    width: 100vw;
+    height: 30px;
+    margin: 4px 4px 4px 4px;
+}
+    .c1 h6 {
+        font-family: Tahoma;
+        font-size: 14px;
+        letter-spacing: 2px;
+        font-weight: bold;
+        padding-top: 2px;
+    }
+.btn {
+    margin: 30px 10px 0px 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.b2 {
+    margin-left: 39%;
+    font-family: Tahoma;
+    font-size: 13px;
+}
+.c1 h6 {
+    text-align: center;
+    color: whitesmoke;
+    margin-top: 4px;
+}

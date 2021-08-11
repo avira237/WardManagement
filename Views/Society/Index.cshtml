@@ -1,0 +1,93 @@
+﻿@model WM.Models.SOCIETYMASTER
+@{ ViewBag.Title = "Index"; }
+<head>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/WardMaster.css" />
+    <link rel="stylesheet" href="~/css/MatdanMathak.css" />
+    <link rel="stylesheet" href="~/css/CSS_datatable.css" />
+</head>
+<body>
+    <div class="body">
+        <form method="post" name="frmSociety" class="form-inline" id="frmSociety">
+            <div class="c1">
+                <h6>SOCIETY MASTER INFORMATION</h6>
+            </div>
+            <div class="container border border-dark p-2 mt-2 pl-lg-4">
+                <div class="row">
+                    <div class="col-12 form-inline" style=" height:50px;">
+                        <input type="hidden" class="form-control" id="ID" name="ID">
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="SOCIETYNAME" class="text-dark col-6 d-flex justify-content-end" id="lbl">SOCIETY NAME :</label>
+                            <input placeholder="SOCIETY NAME" required="" type="text" id="SOCIETYNAME" name="SOCIETYNAME" class="form-control col-6" />
+                        </div>
+                        <div class="col-5 form-inline" style="height:50px;">
+                            <label for="LANDMARK" class="text-dark col-6 d-flex justify-content-end" id="lbl">LANDMARK :</label>
+                            <input placeholder="LANDMARK" required="" type="text" id="LANDMARK" name="LANDMARK" class="form-control col-6" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 form-inline" style=" height:50px;">
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="WARDID" class="text-dark col-6 d-flex justify-content-end" id="lbl">WARD NAME :</label>
+                            <select required="" style="font-size:11px;" class="form-control col-6" id="WARDID" name="WARDID"></select>
+                        </div>
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="MATDAN_ID" class="text-dark col-5 d-flex justify-content-end" id="lbl">MATDANMATHAK NAME :</label>
+                            <select class="form-control col-6" id="MATDANID" name="MATDANID" style="font-size:11px;text-align:left;" required=""></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 form-inline" style=" height:50px;">
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="BOOTHID" class="text-dark col-6 d-flex justify-content-end" id="lbl">BOOTH NO :</label>
+                            <select class="form-control col-6" id="BOOTHID" name="BOOTHID" style="font-size:11px;" required=""></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-success b2" id="btnsave" name="btnsave">
+                            <i class="fa fa-check-circle" aria-hidden="true"></i>
+                            Save
+                        </button>
+                        <button class="btn btn-outline-secondary b2" id="btnload" name="btnload">
+                            <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                            Loading
+                        </button>
+                        <button class="btn btn-success b2" id="btnupdate" name="btnupdate">
+                            <i class="fa fa-check" aria-hidden="true"></i>
+                            Update
+                        </button>
+                        <button class="btn b1" type="reset" id="btnreset">
+                            <i class="fa fa-undo" aria-hidden="true"></i>
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="container-fluid dtborder" style="width: 90%;height:100%; margin: auto;margin-top: 20px;margin-bottom: 20px;padding: 10px;padding-bottom:10px;padding-right:10px;text-align: center;">
+            <table id="Societytbl" class=" table-striped table-bordered cell-border order-column table-responsive-md table-responsive-sm" style="width:100%;margin:auto;">
+                <thead>
+                    <tr>
+                        <th>ACTION</th>
+                        <th>SOCITY NAME</th>
+                        <th>WARD NAME</th>
+                        <th>MATDAN NAME</th>
+                        <th>BOOTH NO</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <link rel="stylesheet" href="~/css/CSS_datatable.css" />
+    @* <link rel="stylesheet" href="~/Content/DataTables/css/jquery.dataTables.css" />*@
+    <link rel="stylesheet" href="~/Content/DataTables/css/dataTables.bootstrap4.min.css" />
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Scripts/pagination.js"></script>
+    <script src="~/Scripts/Society/index.js"></script>
+</body>

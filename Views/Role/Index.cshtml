@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/WardMaster.css" />
+    <style>
+        .dataTables_empty {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="body">
+        <form class="form-inline" id="frmWardMaster" name="frmWardMaster">
+            <div class="c1">
+                <h6>RIGHT MASTER </h6>
+            </div>
+            <div class="container container1">
+                <input type="hidden" id="ID" name="ID" />
+                <div class="row row1">
+                    <div class="col-md-12 col-sm-12  p-3 mt-2">
+                        <div class="form-group input-group">
+                            <div class="col-1">
+                            </div>
+                            <lable id="lbl" class="col-4 d-flex justify-content-end"> ROLE : </lable>
+                            <select required="" style="font-size:11px;text-align:left;" class="form-control col-3" id="ROLEID" name="ROLEID"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="container table-bordered border-dark dtward" style="width: 75%;height:100%; margin: auto;margin-top: 20px;margin-bottom: 20px;padding: 10px;padding-bottom:10px;padding-right:10px;text-align: center;">
+            <table id="Righttbl" class=" table-striped table-bordered cell-border order-columnn  table-responsive-md table-responsive-sm" style="width:100%;margin:auto;">
+                <thead>
+                    <tr>
+                        <th>RESOURCE NAME</th>
+                        <th>ISADD</th>
+                        <th>ISUPDATE</th>
+                        <th>ISVIEW</th>
+                        <th>ISPRINT</th>
+                        <th>ISDELETE</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <link rel="stylesheet" href="~/css/CSS_datatable.css" />
+    <link rel="stylesheet" href="~/Content/DataTables/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="~/Content/DataTables/css/fixedColumns.bootstrap4.min.css" />
+    <link rel="stylesheet" href="~/Content/DataTables/css/fixedColumns.dataTables.min.css" />
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.fixedColumns.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Scripts/pagination.js"></script>
+    <script src="~/Scripts/RoleMaster/Index.js"></script>
+</body>
+</html>
+

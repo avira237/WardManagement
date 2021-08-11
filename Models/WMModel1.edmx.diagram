@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b39f9785619746548c4d9896b61f986a" Name="Diagram1">
+        <EntityTypeShape EntityType="WMModel.BOOTHMASTER" Width="1.5" PointX="7.5" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WMModel.MATDANMATHAKMASTER" Width="1.5" PointX="10.5" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WMModel.ROLEMASTER" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WMModel.USERMASTER" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WMModel.WARDMASTER" Width="1.5" PointX="5.25" PointY="17.5" IsExpanded="true" />
+        <AssociationConnector Association="WMModel.FK_BOOTHMASTER_MATDANMATHAKMASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="WMModel.FK_BOOTHMASTER_USERMASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="WMModel.FK_BOOTHMASTER_WARDMASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="WMModel.FK_MATDANMATHAKMASTER_USERMASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="WMModel.FK_MATDANMATHAKMASTER_WARDMASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="WMModel.FK_USERMASTER_ROLEMASTER" ManuallyRouted="false" />
+        <AssociationConnector Association="WMModel.FK_WARDMASTER_USERMASTER" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,41 @@
+﻿table.dataTable thead tr {
+    background-color: #094d90;
+    color: white !important;
+    padding: 5px;
+}
+
+table.dataTable thead tr th {
+    font-weight: lighter !important;
+}
+
+table.dataTable td {
+    padding: 5px;
+    margin: auto;
+}
+.dataTables_empty
+{
+    text-align:center !important;
+}
+table.dataTable thead th {
+    padding: 5px 18px;
+    border-bottom: 1px solid #111;
+}
+
+.dtborder {
+    margin: 10px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.container1 .row1 .col1 lable {
+    letter-spacing: 2px;
+}
+
+.fa-pencil {
+    font-size: 15px;
+}
+
+table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable td:last-child, table.table-bordered.dataTable td:last-child {
+    border-right-width: 0;
+    text-align: center;
+}

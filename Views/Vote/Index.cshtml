@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<head>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/WardMaster.css" />
+    <link rel="stylesheet" href="~/css/MatdanMathak.css" />
+    <link rel="stylesheet" href="~/css/CSS_datatable.css" />
+    <style>
+        table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable td:last-child, table.table-bordered.dataTable td:last-child {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="body">
+        <form method="post" name="frmVote" class="form-inline" id="frmVote">
+            <div class="c1">
+                <h6>VOTE INFORMATION</h6>
+            </div>
+            <div class="container border border-dark p-2 mt-2 pl-lg-4">
+                <div class="row" style="margin-top: 15px;">
+                    <div class="col-12 form-inline" style=" height:50px;">
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <input type="hidden" class="form-control" id="ID" name="ID">
+                            <label for="SEARCH" class="text-dark col-5 d-flex justify-content-end" id="lbl">SEARCH :</label>
+                            <input placeholder="SEARCH" type="text" id="SEARCH" name="SEARCH" class="form-control col-6" />
+                        </div>
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="WARDID" class="text-dark col-3 d-flex justify-content-end" id="lbl">WARD NAME :</label>
+                            <select style="font-size:11px;text-align:left;" class="form-control col-6" id="WARDID" name="WARDID"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 15px;">
+                    <div class="col-12 form-inline" style=" height:50px;">
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="MATDANID" class="text-dark col-5 d-flex justify-content-end" id="lbl">MATDAN NAME :</label>
+                            <select style="font-size:11px;text-align:left;" class="form-control col-6" id="MATDANID" name="MATDANID"></select>
+                        </div>
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="BOOTHNO" class="text-dark col-3 d-flex justify-content-end" id="lbl">BOOTH NO :</label>
+                            <input placeholder="BOOTH NO" type="text" id="BOOTHNO" name="BOOTHNO" class="form-control col-6" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 15px;">
+                    <div class="col-12 form-inline" style=" height:50px;">
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="SOCIETYID" class="text-dark col-5 d-flex justify-content-end" id="lbl">SOCIETY NAME :</label>
+                            <select style="font-size:11px;text-align:left;" class="form-control col-6" id="SOCIETYID" name="SOCIETYID"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-success b2" id="btnsearch" name="btnsearch">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            Search
+                        </button>
+                        <button class="btn b1" type="reset" id="btnreset">
+                            <i class="fa fa-undo" aria-hidden="true"></i>
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="container-fluid dtborder" style="width: 90%;height:100%; margin: auto;margin-top: 20px;margin-bottom: 20px;padding: 10px;padding-bottom:10px;padding-right:10px;text-align: center;">
+            <table id="Votetbl" class=" table-striped table-bordered cell-border order-column table-responsive table-responsive-md table-responsive-sm nowrap" style="width:100%;margin:auto;">
+                <thead>
+                    <tr>
+                        <th>IS VOTED</th>
+                        <th>NAME</th>
+                        <th>UNIQUE NUMBER</th>
+                        <th>WARD NAME</th>
+                        <th>MATDAN NAME</th>
+                        <th>BOOTH NO</th>
+                        <th>SOCIETY NAME</th>
+                        <th>ADDRESS</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <link rel="stylesheet" href="~/css/CSS_datatable.css" />
+    @* <link rel="stylesheet" href="~/Content/DataTables/css/jquery.dataTables.css" />*@
+    <link rel="stylesheet" href="~/Content/DataTables/css/dataTables.bootstrap4.min.css" />
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Scripts/pagination.js"></script>
+    <script src="~/Scripts/Vote/Index.js"></script>
+</body>

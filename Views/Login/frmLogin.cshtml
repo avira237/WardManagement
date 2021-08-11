@@ -1,0 +1,39 @@
+﻿@model WM.Models.USERMASTER
+@{
+    Layout = null;
+}
+<head>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css">   
+    <link rel="stylesheet" href="~/css/login.css" />
+</head>
+<body>
+    <header class="body">
+        <div class="container login-form">
+            <h2>WARD MANAGEMENT SYSTEM @ViewBag.data</h2>
+            <form method="post" name="frmlogin" id="frmlogin">
+                <div class="form-group">
+                    <label for="txt_userid" class="text-secondary">USERID</label>
+                    <input required="" type="text" class="form-control" id="USER_ID" name="USER_ID">
+                </div>
+                <div class="form-group">
+                    <label for="txt_password" class="text-secondary">PASSWORD</label>
+                    <input required="" type="password" class="form-control" id="PASSWORD" name="PASSWORD">
+                </div>
+                <button type="submit" class="btn btn-primary" id="btn_submit" name="btn_submit"><i class="fa fa-sign-in" -hiariadden="true"></i> Sign in</button>
+            </form>
+        </div>
+    </header>
+    <script src="~/Scripts/jquery-3.5.1.slim.min.js"></script>
+    <script src="~/Scripts/popper-utils.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/Login/Index.js"></script>
+    <script src="~/Scripts/inputmask/inputmask.min.js"></script>
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Scripts/inputmask/jquery.inputmask.js"></script>
+    <script src="~/Scripts/inputmask/bindings/inputmask.binding.js"></script>
+</body>
+
+
+
+

@@ -1,0 +1,1554 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BOOTHMASTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WARD_ID" Type="int" />
+          <Property Name="MATDAN_ID" Type="int" />
+          <Property Name="BOOTH1" Type="int" />
+          <Property Name="BOOTH2" Type="int" />
+          <Property Name="BOOTH3" Type="int" />
+          <Property Name="BOOTH4" Type="int" />
+          <Property Name="BOOTH5" Type="int" />
+          <Property Name="CREATED_BY" Type="int" />
+          <Property Name="CREATED_ON" Type="date" />
+          <Property Name="UPDATED_BY" Type="int" />
+          <Property Name="UPDATED_ON" Type="date" />
+          <Property Name="EF1" Type="bit" />
+          <Property Name="EF2" Type="bit" />
+          <Property Name="EF3" Type="bit" />
+          <Property Name="EF4" Type="bit" />
+          <Property Name="EF5" Type="bit" />
+        </EntityType>
+        <EntityType Name="MATDANMATHAKMASTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WARD_ID" Type="int" />
+          <Property Name="NAME" Type="varchar(max)" />
+          <Property Name="ADDRESS" Type="varchar(max)" />
+          <Property Name="MOBILE" Type="bigint" />
+          <Property Name="CREATED_BY" Type="int" />
+          <Property Name="CREATED_ON" Type="date" />
+          <Property Name="UPDATED_BY" Type="int" />
+          <Property Name="UPDATED_ON" Type="date" />
+          <Property Name="EF1" Type="bit" />
+          <Property Name="EF2" Type="bit" />
+          <Property Name="EF3" Type="bit" />
+          <Property Name="EF4" Type="bit" />
+          <Property Name="EF5" Type="bit" />
+        </EntityType>
+        <EntityType Name="PERSONINFO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UNIQUE_NUMBER" Type="nchar" MaxLength="10" />
+          <Property Name="VOTER_ID" Type="varchar" MaxLength="10" />
+          <Property Name="NAME" Type="varchar(max)" />
+          <Property Name="MIDDLENAME" Type="varchar(max)" />
+          <Property Name="GENDER" Type="varchar" MaxLength="10" />
+          <Property Name="DOB" Type="date" />
+          <Property Name="AGE" Type="int" />
+          <Property Name="ADDRESS" Type="varchar(max)" />
+          <Property Name="WARD_ID" Type="int" />
+          <Property Name="MATDAN_ID" Type="int" />
+          <Property Name="BOOTH_ID" Type="int" />
+          <Property Name="SOCIETY_ID" Type="int" />
+          <Property Name="ISVOTED" Type="bit" />
+          <Property Name="VOTE_TIMESTAMP" Type="datetime" />
+          <Property Name="EF1" Type="bit" />
+          <Property Name="EF2" Type="bit" />
+          <Property Name="EF3" Type="bit" />
+          <Property Name="EF4" Type="bit" />
+          <Property Name="EF5" Type="bit" />
+        </EntityType>
+        <EntityType Name="RESOURCEMASTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RESOURCE_NAME" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RIGHTMASTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ROLE_ID" Type="int" />
+          <Property Name="RESOURCE_ID" Type="int" />
+          <Property Name="ISADD" Type="bit" />
+          <Property Name="ISUPDATE" Type="bit" />
+          <Property Name="ISVIEW" Type="bit" />
+          <Property Name="ISPRINT" Type="bit" />
+          <Property Name="ISDELETE" Type="bit" />
+        </EntityType>
+        <EntityType Name="ROLEMASTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ROLE_NAME" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SOCIETYMASTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SOCIETYNAME" Type="varchar(max)" />
+          <Property Name="LANDMARK" Type="varchar(max)" />
+          <Property Name="WARD_ID" Type="int" />
+          <Property Name="MATDAN_ID" Type="int" />
+          <Property Name="BOOTH_ID" Type="int" />
+          <Property Name="EF1" Type="bit" />
+          <Property Name="EF2" Type="bit" />
+          <Property Name="EF3" Type="bit" />
+          <Property Name="EF4" Type="bit" />
+          <Property Name="EF5" Type="bit" />
+        </EntityType>
+        <EntityType Name="USERMASTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERNAME" Type="varchar" MaxLength="50" />
+          <Property Name="USER_ID" Type="varchar" MaxLength="20" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="50" />
+          <Property Name="MOBILE" Type="bigint" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="50" />
+          <Property Name="ROLE_ID" Type="int" />
+          <Property Name="IS_LOCKED" Type="bit" />
+          <Property Name="LOCKED_REASON" Type="varchar(max)" />
+          <Property Name="CREATED_BY" Type="int" />
+          <Property Name="CREATED_ON" Type="date" />
+          <Property Name="UPDATED_ON" Type="date" />
+          <Property Name="EF1" Type="bit" />
+          <Property Name="EF2" Type="bit" />
+          <Property Name="EF3" Type="bit" />
+          <Property Name="EF4" Type="bit" />
+          <Property Name="EF5" Type="bit" />
+        </EntityType>
+        <EntityType Name="WARDMASTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WARDNAME" Type="varchar(max)" />
+          <Property Name="CREATED_BY" Type="int" />
+          <Property Name="CREATED_ON" Type="date" />
+          <Property Name="UPDATED_BY" Type="int" />
+          <Property Name="UPDATED_ON" Type="date" />
+          <Property Name="EF1" Type="bit" />
+          <Property Name="EF2" Type="bit" />
+          <Property Name="EF3" Type="bit" />
+          <Property Name="EF4" Type="bit" />
+          <Property Name="EF5" Type="bit" />
+        </EntityType>
+        <Association Name="FK_BOOTHMASTER_MATDANMATHAKMASTER">
+          <End Role="MATDANMATHAKMASTER" Type="Self.MATDANMATHAKMASTER" Multiplicity="0..1" />
+          <End Role="BOOTHMASTER" Type="Self.BOOTHMASTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MATDANMATHAKMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BOOTHMASTER">
+              <PropertyRef Name="MATDAN_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BOOTHMASTER_USERMASTER">
+          <End Role="USERMASTER" Type="Self.USERMASTER" Multiplicity="0..1" />
+          <End Role="BOOTHMASTER" Type="Self.BOOTHMASTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BOOTHMASTER">
+              <PropertyRef Name="CREATED_BY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BOOTHMASTER_WARDMASTER">
+          <End Role="WARDMASTER" Type="Self.WARDMASTER" Multiplicity="0..1" />
+          <End Role="BOOTHMASTER" Type="Self.BOOTHMASTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WARDMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BOOTHMASTER">
+              <PropertyRef Name="WARD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MATDANMATHAKMASTER_USERMASTER">
+          <End Role="USERMASTER" Type="Self.USERMASTER" Multiplicity="0..1" />
+          <End Role="MATDANMATHAKMASTER" Type="Self.MATDANMATHAKMASTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MATDANMATHAKMASTER">
+              <PropertyRef Name="CREATED_BY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MATDANMATHAKMASTER_WARDMASTER">
+          <End Role="WARDMASTER" Type="Self.WARDMASTER" Multiplicity="0..1" />
+          <End Role="MATDANMATHAKMASTER" Type="Self.MATDANMATHAKMASTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WARDMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MATDANMATHAKMASTER">
+              <PropertyRef Name="WARD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSONINFO_BOOTHMASTER">
+          <End Role="BOOTHMASTER" Type="Self.BOOTHMASTER" Multiplicity="0..1" />
+          <End Role="PERSONINFO" Type="Self.PERSONINFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BOOTHMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PERSONINFO">
+              <PropertyRef Name="BOOTH_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSONINFO_MATDANMATHAKMASTER">
+          <End Role="MATDANMATHAKMASTER" Type="Self.MATDANMATHAKMASTER" Multiplicity="0..1" />
+          <End Role="PERSONINFO" Type="Self.PERSONINFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MATDANMATHAKMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PERSONINFO">
+              <PropertyRef Name="MATDAN_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSONINFO_SOCIETYMASTER">
+          <End Role="SOCIETYMASTER" Type="Self.SOCIETYMASTER" Multiplicity="0..1" />
+          <End Role="PERSONINFO" Type="Self.PERSONINFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SOCIETYMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PERSONINFO">
+              <PropertyRef Name="SOCIETY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSONINFO_WARDMASTER">
+          <End Role="WARDMASTER" Type="Self.WARDMASTER" Multiplicity="0..1" />
+          <End Role="PERSONINFO" Type="Self.PERSONINFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WARDMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PERSONINFO">
+              <PropertyRef Name="WARD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RIGHTMASTER_RESOURCEMASTER">
+          <End Role="RESOURCEMASTER" Type="Self.RESOURCEMASTER" Multiplicity="0..1" />
+          <End Role="RIGHTMASTER" Type="Self.RIGHTMASTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RESOURCEMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RIGHTMASTER">
+              <PropertyRef Name="RESOURCE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RIGHTMASTER_RIGHTMASTER">
+          <End Role="RIGHTMASTER" Type="Self.RIGHTMASTER" Multiplicity="1" />
+          <End Role="RIGHTMASTER1" Type="Self.RIGHTMASTER" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="RIGHTMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RIGHTMASTER1">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RIGHTMASTER_ROLEMASTER">
+          <End Role="ROLEMASTER" Type="Self.ROLEMASTER" Multiplicity="0..1" />
+          <End Role="RIGHTMASTER" Type="Self.RIGHTMASTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROLEMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RIGHTMASTER">
+              <PropertyRef Name="ROLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SOCIETYMASTER_BOOTHMASTER">
+          <End Role="BOOTHMASTER" Type="Self.BOOTHMASTER" Multiplicity="0..1" />
+          <End Role="SOCIETYMASTER" Type="Self.SOCIETYMASTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BOOTHMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SOCIETYMASTER">
+              <PropertyRef Name="BOOTH_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SOCIETYMASTER_MATDANMATHAKMASTER">
+          <End Role="MATDANMATHAKMASTER" Type="Self.MATDANMATHAKMASTER" Multiplicity="0..1" />
+          <End Role="SOCIETYMASTER" Type="Self.SOCIETYMASTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MATDANMATHAKMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SOCIETYMASTER">
+              <PropertyRef Name="MATDAN_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SOCIETYMASTER_WARDMASTER">
+          <End Role="WARDMASTER" Type="Self.WARDMASTER" Multiplicity="0..1" />
+          <End Role="SOCIETYMASTER" Type="Self.SOCIETYMASTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WARDMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SOCIETYMASTER">
+              <PropertyRef Name="WARD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USERMASTER_ROLEMASTER">
+          <End Role="ROLEMASTER" Type="Self.ROLEMASTER" Multiplicity="0..1" />
+          <End Role="USERMASTER" Type="Self.USERMASTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROLEMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="USERMASTER">
+              <PropertyRef Name="ROLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WARDMASTER_USERMASTER">
+          <End Role="USERMASTER" Type="Self.USERMASTER" Multiplicity="0..1" />
+          <End Role="WARDMASTER" Type="Self.WARDMASTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="WARDMASTER">
+              <PropertyRef Name="CREATED_BY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="FUNC_SEARCH_BOOTH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="searchVal" Type="varchar(max)" Mode="In" />
+          <Parameter Name="primaryId" Type="int" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="PrimaryId" Type="int" Nullable="false" />
+                <Property Name="WardId" Type="int" />
+                <Property Name="MatdanId" Type="int" Nullable="false" />
+                <Property Name="WardName" Type="varchar(max)" />
+                <Property Name="MatdanMathakName" Type="varchar(max)" />
+                <Property Name="Address" Type="varchar(max)" />
+                <Property Name="Mobile" Type="bigint" />
+                <Property Name="Booth1" Type="int" />
+                <Property Name="Booth2" Type="int" />
+                <Property Name="Booth3" Type="int" />
+                <Property Name="Booth4" Type="int" />
+                <Property Name="Booth5" Type="int" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="FUNC_SEARCH_MATDANMATHAK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="searchVal" Type="varchar(max)" Mode="In" />
+          <Parameter Name="primaryId" Type="int" Mode="In" />
+          <Parameter Name="wardId" Type="int" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="PrimaryId" Type="int" Nullable="false" />
+                <Property Name="WardId" Type="int" />
+                <Property Name="WardName" Type="varchar(max)" />
+                <Property Name="MatdanMathakName" Type="varchar(max)" />
+                <Property Name="Mobile" Type="bigint" />
+                <Property Name="Address" Type="varchar(max)" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="FUNC_SEARCH_PERSONINFO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="searchVal" Type="varchar(max)" Mode="In" />
+          <Parameter Name="primaryId" Type="int" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="PrimaryId" Type="int" Nullable="false" />
+                <Property Name="UniqueNumber" Type="nchar" MaxLength="10" />
+                <Property Name="VoterId" Type="varchar" MaxLength="10" />
+                <Property Name="PersonName" Type="varchar(max)" />
+                <Property Name="Gender" Type="varchar" MaxLength="10" />
+                <Property Name="Dob" Type="varchar" MaxLength="10" />
+                <Property Name="Age" Type="int" />
+                <Property Name="Address" Type="varchar(max)" />
+                <Property Name="WardId" Type="int" />
+                <Property Name="WardName" Type="varchar(max)" />
+                <Property Name="MatdanId" Type="int" />
+                <Property Name="MatdanName" Type="varchar(max)" />
+                <Property Name="SocietyId" Type="int" />
+                <Property Name="SocietyName" Type="varchar(max)" />
+                <Property Name="BoothId" Type="int" />
+                <Property Name="Booth1" Type="int" />
+                <Property Name="Booth2" Type="int" />
+                <Property Name="Booth3" Type="int" />
+                <Property Name="Booth4" Type="int" />
+                <Property Name="Booth5" Type="int" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="FUNC_SEARCH_SOCIETY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="searchVal" Type="varchar(max)" Mode="In" />
+          <Parameter Name="primaryId" Type="int" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="PrimaryId" Type="int" Nullable="false" />
+                <Property Name="SocietyName" Type="varchar(max)" />
+                <Property Name="Landmark" Type="varchar(max)" />
+                <Property Name="WardId" Type="int" />
+                <Property Name="WardName" Type="varchar(max)" />
+                <Property Name="MatdanId" Type="int" />
+                <Property Name="MardanName" Type="varchar(max)" />
+                <Property Name="BoothId" Type="int" />
+                <Property Name="Booth1" Type="int" />
+                <Property Name="Booth2" Type="int" />
+                <Property Name="Booth3" Type="int" />
+                <Property Name="Booth4" Type="int" />
+                <Property Name="Booth5" Type="int" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="FUNC_SEARCH_USERMASTER" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="searchVal" Type="varchar(max)" Mode="In" />
+          <Parameter Name="primaryId" Type="int" Mode="In" />
+          <Parameter Name="roleId" Type="int" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="PrimaryId" Type="int" Nullable="false" />
+                <Property Name="UserName" Type="varchar" MaxLength="50" />
+                <Property Name="UserId" Type="varchar" MaxLength="20" />
+                <Property Name="Password" Type="varchar" MaxLength="50" />
+                <Property Name="Email" Type="varchar" MaxLength="50" />
+                <Property Name="RoleId" Type="int" />
+                <Property Name="RoleName" Type="varchar" MaxLength="50" />
+                <Property Name="Mobile" Type="bigint" />
+                <Property Name="Is_Locked" Type="bit" />
+                <Property Name="Locked_Reason" Type="varchar(max)" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="FUNC_SEARCH_WARD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="searchVal" Type="varchar(max)" Mode="In" />
+          <Parameter Name="primaryId" Type="int" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="PrimaryId" Type="int" Nullable="false" />
+                <Property Name="WardName" Type="varchar(max)" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="PROC_CREATE_RESOURCE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RESOURCE_NAME" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="PROC_GET_ALL_BOOTH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="boothId" Type="int" Mode="In" />
+          <Parameter Name="searchVal" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="PROC_GET_ALL_MATDANMATHAK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="matdanId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="PROC_GET_VOTING_DATA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="seachVal" Type="varchar" Mode="In" />
+          <Parameter Name="wardId" Type="int" Mode="In" />
+          <Parameter Name="matdanId" Type="int" Mode="In" />
+          <Parameter Name="boothNumber" Type="int" Mode="In" />
+          <Parameter Name="societyId" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="WMModelStoreContainer">
+          <EntitySet Name="BOOTHMASTER" EntityType="Self.BOOTHMASTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MATDANMATHAKMASTER" EntityType="Self.MATDANMATHAKMASTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PERSONINFO" EntityType="Self.PERSONINFO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RESOURCEMASTER" EntityType="Self.RESOURCEMASTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RIGHTMASTER" EntityType="Self.RIGHTMASTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ROLEMASTER" EntityType="Self.ROLEMASTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SOCIETYMASTER" EntityType="Self.SOCIETYMASTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USERMASTER" EntityType="Self.USERMASTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WARDMASTER" EntityType="Self.WARDMASTER" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_BOOTHMASTER_MATDANMATHAKMASTER" Association="Self.FK_BOOTHMASTER_MATDANMATHAKMASTER">
+            <End Role="MATDANMATHAKMASTER" EntitySet="MATDANMATHAKMASTER" />
+            <End Role="BOOTHMASTER" EntitySet="BOOTHMASTER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BOOTHMASTER_USERMASTER" Association="Self.FK_BOOTHMASTER_USERMASTER">
+            <End Role="USERMASTER" EntitySet="USERMASTER" />
+            <End Role="BOOTHMASTER" EntitySet="BOOTHMASTER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BOOTHMASTER_WARDMASTER" Association="Self.FK_BOOTHMASTER_WARDMASTER">
+            <End Role="WARDMASTER" EntitySet="WARDMASTER" />
+            <End Role="BOOTHMASTER" EntitySet="BOOTHMASTER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MATDANMATHAKMASTER_USERMASTER" Association="Self.FK_MATDANMATHAKMASTER_USERMASTER">
+            <End Role="USERMASTER" EntitySet="USERMASTER" />
+            <End Role="MATDANMATHAKMASTER" EntitySet="MATDANMATHAKMASTER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MATDANMATHAKMASTER_WARDMASTER" Association="Self.FK_MATDANMATHAKMASTER_WARDMASTER">
+            <End Role="WARDMASTER" EntitySet="WARDMASTER" />
+            <End Role="MATDANMATHAKMASTER" EntitySet="MATDANMATHAKMASTER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSONINFO_BOOTHMASTER" Association="Self.FK_PERSONINFO_BOOTHMASTER">
+            <End Role="BOOTHMASTER" EntitySet="BOOTHMASTER" />
+            <End Role="PERSONINFO" EntitySet="PERSONINFO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSONINFO_MATDANMATHAKMASTER" Association="Self.FK_PERSONINFO_MATDANMATHAKMASTER">
+            <End Role="MATDANMATHAKMASTER" EntitySet="MATDANMATHAKMASTER" />
+            <End Role="PERSONINFO" EntitySet="PERSONINFO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSONINFO_SOCIETYMASTER" Association="Self.FK_PERSONINFO_SOCIETYMASTER">
+            <End Role="SOCIETYMASTER" EntitySet="SOCIETYMASTER" />
+            <End Role="PERSONINFO" EntitySet="PERSONINFO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSONINFO_WARDMASTER" Association="Self.FK_PERSONINFO_WARDMASTER">
+            <End Role="WARDMASTER" EntitySet="WARDMASTER" />
+            <End Role="PERSONINFO" EntitySet="PERSONINFO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RIGHTMASTER_RESOURCEMASTER" Association="Self.FK_RIGHTMASTER_RESOURCEMASTER">
+            <End Role="RESOURCEMASTER" EntitySet="RESOURCEMASTER" />
+            <End Role="RIGHTMASTER" EntitySet="RIGHTMASTER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RIGHTMASTER_RIGHTMASTER" Association="Self.FK_RIGHTMASTER_RIGHTMASTER">
+            <End Role="RIGHTMASTER" EntitySet="RIGHTMASTER" />
+            <End Role="RIGHTMASTER1" EntitySet="RIGHTMASTER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RIGHTMASTER_ROLEMASTER" Association="Self.FK_RIGHTMASTER_ROLEMASTER">
+            <End Role="ROLEMASTER" EntitySet="ROLEMASTER" />
+            <End Role="RIGHTMASTER" EntitySet="RIGHTMASTER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SOCIETYMASTER_BOOTHMASTER" Association="Self.FK_SOCIETYMASTER_BOOTHMASTER">
+            <End Role="BOOTHMASTER" EntitySet="BOOTHMASTER" />
+            <End Role="SOCIETYMASTER" EntitySet="SOCIETYMASTER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SOCIETYMASTER_MATDANMATHAKMASTER" Association="Self.FK_SOCIETYMASTER_MATDANMATHAKMASTER">
+            <End Role="MATDANMATHAKMASTER" EntitySet="MATDANMATHAKMASTER" />
+            <End Role="SOCIETYMASTER" EntitySet="SOCIETYMASTER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SOCIETYMASTER_WARDMASTER" Association="Self.FK_SOCIETYMASTER_WARDMASTER">
+            <End Role="WARDMASTER" EntitySet="WARDMASTER" />
+            <End Role="SOCIETYMASTER" EntitySet="SOCIETYMASTER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USERMASTER_ROLEMASTER" Association="Self.FK_USERMASTER_ROLEMASTER">
+            <End Role="ROLEMASTER" EntitySet="ROLEMASTER" />
+            <End Role="USERMASTER" EntitySet="USERMASTER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WARDMASTER_USERMASTER" Association="Self.FK_WARDMASTER_USERMASTER">
+            <End Role="USERMASTER" EntitySet="USERMASTER" />
+            <End Role="WARDMASTER" EntitySet="WARDMASTER" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <ComplexType Name="FUNC_SEARCH_BOOTH_Result">
+          <Property Name="PrimaryId" Type="Int32" Nullable="false" />
+          <Property Name="WardId" Type="Int32" />
+          <Property Name="MatdanId" Type="Int32" Nullable="false" />
+          <Property Name="WardName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MatdanMathakName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="Int64" />
+          <Property Name="Booth1" Type="Int32" />
+          <Property Name="Booth2" Type="Int32" />
+          <Property Name="Booth3" Type="Int32" />
+          <Property Name="Booth4" Type="Int32" />
+          <Property Name="Booth5" Type="Int32" />
+        </ComplexType>
+        <ComplexType Name="FUNC_SEARCH_MATDANMATHAK_Result">
+          <Property Name="PrimaryId" Type="Int32" Nullable="false" />
+          <Property Name="WardId" Type="Int32" />
+          <Property Name="WardName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MatdanMathakName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="Int64" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </ComplexType>
+        <ComplexType Name="FUNC_SEARCH_PERSONINFO_Result">
+          <Property Name="PrimaryId" Type="Int32" Nullable="false" />
+          <Property Name="UniqueNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="VoterId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PersonName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Dob" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="WardId" Type="Int32" />
+          <Property Name="WardName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MatdanId" Type="Int32" />
+          <Property Name="MatdanName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SocietyId" Type="Int32" />
+          <Property Name="SocietyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BoothId" Type="Int32" />
+          <Property Name="Booth1" Type="Int32" />
+          <Property Name="Booth2" Type="Int32" />
+          <Property Name="Booth3" Type="Int32" />
+          <Property Name="Booth4" Type="Int32" />
+          <Property Name="Booth5" Type="Int32" />
+        </ComplexType>
+        <ComplexType Name="FUNC_SEARCH_SOCIETY_Result">
+          <Property Name="PrimaryId" Type="Int32" Nullable="false" />
+          <Property Name="SocietyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Landmark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="WardId" Type="Int32" />
+          <Property Name="WardName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MatdanId" Type="Int32" />
+          <Property Name="MardanName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BoothId" Type="Int32" />
+          <Property Name="Booth1" Type="Int32" />
+          <Property Name="Booth2" Type="Int32" />
+          <Property Name="Booth3" Type="Int32" />
+          <Property Name="Booth4" Type="Int32" />
+          <Property Name="Booth5" Type="Int32" />
+        </ComplexType>
+        <ComplexType Name="FUNC_SEARCH_USERMASTER_Result">
+          <Property Name="PrimaryId" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RoleId" Type="Int32" />
+          <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="Int64" />
+          <Property Name="Is_Locked" Type="Boolean" />
+          <Property Name="Locked_Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </ComplexType>
+        <ComplexType Name="FUNC_SEARCH_WARD_Result">
+          <Property Name="PrimaryId" Type="Int32" Nullable="false" />
+          <Property Name="WardName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </ComplexType>
+        <EntityType Name="BOOTHMASTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WARD_ID" Type="Int32" />
+          <Property Name="MATDAN_ID" Type="Int32" />
+          <Property Name="BOOTH1" Type="Int32" />
+          <Property Name="BOOTH2" Type="Int32" />
+          <Property Name="BOOTH3" Type="Int32" />
+          <Property Name="BOOTH4" Type="Int32" />
+          <Property Name="BOOTH5" Type="Int32" />
+          <Property Name="CREATED_BY" Type="Int32" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="UPDATED_BY" Type="Int32" />
+          <Property Name="UPDATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="EF1" Type="Boolean" />
+          <Property Name="EF2" Type="Boolean" />
+          <Property Name="EF3" Type="Boolean" />
+          <Property Name="EF4" Type="Boolean" />
+          <Property Name="EF5" Type="Boolean" />
+          <NavigationProperty Name="MATDANMATHAKMASTER" Relationship="Self.FK_BOOTHMASTER_MATDANMATHAKMASTER" FromRole="BOOTHMASTER" ToRole="MATDANMATHAKMASTER" />
+          <NavigationProperty Name="USERMASTER" Relationship="Self.FK_BOOTHMASTER_USERMASTER" FromRole="BOOTHMASTER" ToRole="USERMASTER" />
+          <NavigationProperty Name="WARDMASTER" Relationship="Self.FK_BOOTHMASTER_WARDMASTER" FromRole="BOOTHMASTER" ToRole="WARDMASTER" />
+          <NavigationProperty Name="PERSONINFOes" Relationship="Self.FK_PERSONINFO_BOOTHMASTER" FromRole="BOOTHMASTER" ToRole="PERSONINFO" />
+          <NavigationProperty Name="SOCIETYMASTERs" Relationship="Self.FK_SOCIETYMASTER_BOOTHMASTER" FromRole="BOOTHMASTER" ToRole="SOCIETYMASTER" />
+        </EntityType>
+        <EntityType Name="MATDANMATHAKMASTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WARD_ID" Type="Int32" />
+          <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MOBILE" Type="Int64" />
+          <Property Name="CREATED_BY" Type="Int32" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="UPDATED_BY" Type="Int32" />
+          <Property Name="UPDATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="EF1" Type="Boolean" />
+          <Property Name="EF2" Type="Boolean" />
+          <Property Name="EF3" Type="Boolean" />
+          <Property Name="EF4" Type="Boolean" />
+          <Property Name="EF5" Type="Boolean" />
+          <NavigationProperty Name="BOOTHMASTERs" Relationship="Self.FK_BOOTHMASTER_MATDANMATHAKMASTER" FromRole="MATDANMATHAKMASTER" ToRole="BOOTHMASTER" />
+          <NavigationProperty Name="USERMASTER" Relationship="Self.FK_MATDANMATHAKMASTER_USERMASTER" FromRole="MATDANMATHAKMASTER" ToRole="USERMASTER" />
+          <NavigationProperty Name="WARDMASTER" Relationship="Self.FK_MATDANMATHAKMASTER_WARDMASTER" FromRole="MATDANMATHAKMASTER" ToRole="WARDMASTER" />
+          <NavigationProperty Name="PERSONINFOes" Relationship="Self.FK_PERSONINFO_MATDANMATHAKMASTER" FromRole="MATDANMATHAKMASTER" ToRole="PERSONINFO" />
+          <NavigationProperty Name="SOCIETYMASTERs" Relationship="Self.FK_SOCIETYMASTER_MATDANMATHAKMASTER" FromRole="MATDANMATHAKMASTER" ToRole="SOCIETYMASTER" />
+        </EntityType>
+        <EntityType Name="PERSONINFO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UNIQUE_NUMBER" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="VOTER_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MIDDLENAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="GENDER" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DOB" Type="DateTime" Precision="0" />
+          <Property Name="AGE" Type="Int32" />
+          <Property Name="ADDRESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="WARD_ID" Type="Int32" />
+          <Property Name="MATDAN_ID" Type="Int32" />
+          <Property Name="BOOTH_ID" Type="Int32" />
+          <Property Name="SOCIETY_ID" Type="Int32" />
+          <Property Name="ISVOTED" Type="Boolean" />
+          <Property Name="VOTE_TIMESTAMP" Type="DateTime" Precision="3" />
+          <Property Name="EF1" Type="Boolean" />
+          <Property Name="EF2" Type="Boolean" />
+          <Property Name="EF3" Type="Boolean" />
+          <Property Name="EF4" Type="Boolean" />
+          <Property Name="EF5" Type="Boolean" />
+          <NavigationProperty Name="BOOTHMASTER" Relationship="Self.FK_PERSONINFO_BOOTHMASTER" FromRole="PERSONINFO" ToRole="BOOTHMASTER" />
+          <NavigationProperty Name="MATDANMATHAKMASTER" Relationship="Self.FK_PERSONINFO_MATDANMATHAKMASTER" FromRole="PERSONINFO" ToRole="MATDANMATHAKMASTER" />
+          <NavigationProperty Name="SOCIETYMASTER" Relationship="Self.FK_PERSONINFO_SOCIETYMASTER" FromRole="PERSONINFO" ToRole="SOCIETYMASTER" />
+          <NavigationProperty Name="WARDMASTER" Relationship="Self.FK_PERSONINFO_WARDMASTER" FromRole="PERSONINFO" ToRole="WARDMASTER" />
+        </EntityType>
+        <EntityType Name="RESOURCEMASTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RESOURCE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="RIGHTMASTERs" Relationship="Self.FK_RIGHTMASTER_RESOURCEMASTER" FromRole="RESOURCEMASTER" ToRole="RIGHTMASTER" />
+        </EntityType>
+        <EntityType Name="RIGHTMASTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ROLE_ID" Type="Int32" />
+          <Property Name="RESOURCE_ID" Type="Int32" />
+          <Property Name="ISADD" Type="Boolean" />
+          <Property Name="ISUPDATE" Type="Boolean" />
+          <Property Name="ISVIEW" Type="Boolean" />
+          <Property Name="ISPRINT" Type="Boolean" />
+          <Property Name="ISDELETE" Type="Boolean" />
+          <NavigationProperty Name="RESOURCEMASTER" Relationship="Self.FK_RIGHTMASTER_RESOURCEMASTER" FromRole="RIGHTMASTER" ToRole="RESOURCEMASTER" />
+          <NavigationProperty Name="RIGHTMASTER1" Relationship="Self.FK_RIGHTMASTER_RIGHTMASTER" FromRole="RIGHTMASTER" ToRole="RIGHTMASTER1" />
+          <NavigationProperty Name="RIGHTMASTER2" Relationship="Self.FK_RIGHTMASTER_RIGHTMASTER" FromRole="RIGHTMASTER1" ToRole="RIGHTMASTER" />
+          <NavigationProperty Name="ROLEMASTER" Relationship="Self.FK_RIGHTMASTER_ROLEMASTER" FromRole="RIGHTMASTER" ToRole="ROLEMASTER" />
+        </EntityType>
+        <EntityType Name="ROLEMASTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ROLE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="RIGHTMASTERs" Relationship="Self.FK_RIGHTMASTER_ROLEMASTER" FromRole="ROLEMASTER" ToRole="RIGHTMASTER" />
+          <NavigationProperty Name="USERMASTERs" Relationship="Self.FK_USERMASTER_ROLEMASTER" FromRole="ROLEMASTER" ToRole="USERMASTER" />
+        </EntityType>
+        <EntityType Name="SOCIETYMASTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SOCIETYNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LANDMARK" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="WARD_ID" Type="Int32" />
+          <Property Name="MATDAN_ID" Type="Int32" />
+          <Property Name="BOOTH_ID" Type="Int32" />
+          <Property Name="EF1" Type="Boolean" />
+          <Property Name="EF2" Type="Boolean" />
+          <Property Name="EF3" Type="Boolean" />
+          <Property Name="EF4" Type="Boolean" />
+          <Property Name="EF5" Type="Boolean" />
+          <NavigationProperty Name="BOOTHMASTER" Relationship="Self.FK_SOCIETYMASTER_BOOTHMASTER" FromRole="SOCIETYMASTER" ToRole="BOOTHMASTER" />
+          <NavigationProperty Name="MATDANMATHAKMASTER" Relationship="Self.FK_SOCIETYMASTER_MATDANMATHAKMASTER" FromRole="SOCIETYMASTER" ToRole="MATDANMATHAKMASTER" />
+          <NavigationProperty Name="PERSONINFOes" Relationship="Self.FK_PERSONINFO_SOCIETYMASTER" FromRole="SOCIETYMASTER" ToRole="PERSONINFO" />
+          <NavigationProperty Name="WARDMASTER" Relationship="Self.FK_SOCIETYMASTER_WARDMASTER" FromRole="SOCIETYMASTER" ToRole="WARDMASTER" />
+        </EntityType>
+        <EntityType Name="USERMASTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="USER_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MOBILE" Type="Int64" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ROLE_ID" Type="Int32" />
+          <Property Name="IS_LOCKED" Type="Boolean" />
+          <Property Name="LOCKED_REASON" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_BY" Type="Int32" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="UPDATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="EF1" Type="Boolean" />
+          <Property Name="EF2" Type="Boolean" />
+          <Property Name="EF3" Type="Boolean" />
+          <Property Name="EF4" Type="Boolean" />
+          <Property Name="EF5" Type="Boolean" />
+          <NavigationProperty Name="BOOTHMASTERs" Relationship="Self.FK_BOOTHMASTER_USERMASTER" FromRole="USERMASTER" ToRole="BOOTHMASTER" />
+          <NavigationProperty Name="MATDANMATHAKMASTERs" Relationship="Self.FK_MATDANMATHAKMASTER_USERMASTER" FromRole="USERMASTER" ToRole="MATDANMATHAKMASTER" />
+          <NavigationProperty Name="ROLEMASTER" Relationship="Self.FK_USERMASTER_ROLEMASTER" FromRole="USERMASTER" ToRole="ROLEMASTER" />
+          <NavigationProperty Name="WARDMASTERs" Relationship="Self.FK_WARDMASTER_USERMASTER" FromRole="USERMASTER" ToRole="WARDMASTER" />
+        </EntityType>
+        <EntityType Name="WARDMASTER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WARDNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_BY" Type="Int32" />
+          <Property Name="CREATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="UPDATED_BY" Type="Int32" />
+          <Property Name="UPDATED_ON" Type="DateTime" Precision="0" />
+          <Property Name="EF1" Type="Boolean" />
+          <Property Name="EF2" Type="Boolean" />
+          <Property Name="EF3" Type="Boolean" />
+          <Property Name="EF4" Type="Boolean" />
+          <Property Name="EF5" Type="Boolean" />
+          <NavigationProperty Name="BOOTHMASTERs" Relationship="Self.FK_BOOTHMASTER_WARDMASTER" FromRole="WARDMASTER" ToRole="BOOTHMASTER" />
+          <NavigationProperty Name="MATDANMATHAKMASTERs" Relationship="Self.FK_MATDANMATHAKMASTER_WARDMASTER" FromRole="WARDMASTER" ToRole="MATDANMATHAKMASTER" />
+          <NavigationProperty Name="PERSONINFOes" Relationship="Self.FK_PERSONINFO_WARDMASTER" FromRole="WARDMASTER" ToRole="PERSONINFO" />
+          <NavigationProperty Name="SOCIETYMASTERs" Relationship="Self.FK_SOCIETYMASTER_WARDMASTER" FromRole="WARDMASTER" ToRole="SOCIETYMASTER" />
+          <NavigationProperty Name="USERMASTER" Relationship="Self.FK_WARDMASTER_USERMASTER" FromRole="WARDMASTER" ToRole="USERMASTER" />
+        </EntityType>
+        <Association Name="FK_BOOTHMASTER_MATDANMATHAKMASTER">
+          <End Role="MATDANMATHAKMASTER" Type="Self.MATDANMATHAKMASTER" Multiplicity="0..1" />
+          <End Role="BOOTHMASTER" Type="Self.BOOTHMASTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MATDANMATHAKMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BOOTHMASTER">
+              <PropertyRef Name="MATDAN_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BOOTHMASTER_USERMASTER">
+          <End Role="USERMASTER" Type="Self.USERMASTER" Multiplicity="0..1" />
+          <End Role="BOOTHMASTER" Type="Self.BOOTHMASTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BOOTHMASTER">
+              <PropertyRef Name="CREATED_BY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BOOTHMASTER_WARDMASTER">
+          <End Role="WARDMASTER" Type="Self.WARDMASTER" Multiplicity="0..1" />
+          <End Role="BOOTHMASTER" Type="Self.BOOTHMASTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WARDMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BOOTHMASTER">
+              <PropertyRef Name="WARD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSONINFO_BOOTHMASTER">
+          <End Role="BOOTHMASTER" Type="Self.BOOTHMASTER" Multiplicity="0..1" />
+          <End Role="PERSONINFO" Type="Self.PERSONINFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BOOTHMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PERSONINFO">
+              <PropertyRef Name="BOOTH_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SOCIETYMASTER_BOOTHMASTER">
+          <End Role="BOOTHMASTER" Type="Self.BOOTHMASTER" Multiplicity="0..1" />
+          <End Role="SOCIETYMASTER" Type="Self.SOCIETYMASTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BOOTHMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SOCIETYMASTER">
+              <PropertyRef Name="BOOTH_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MATDANMATHAKMASTER_USERMASTER">
+          <End Role="USERMASTER" Type="Self.USERMASTER" Multiplicity="0..1" />
+          <End Role="MATDANMATHAKMASTER" Type="Self.MATDANMATHAKMASTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MATDANMATHAKMASTER">
+              <PropertyRef Name="CREATED_BY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MATDANMATHAKMASTER_WARDMASTER">
+          <End Role="WARDMASTER" Type="Self.WARDMASTER" Multiplicity="0..1" />
+          <End Role="MATDANMATHAKMASTER" Type="Self.MATDANMATHAKMASTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WARDMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MATDANMATHAKMASTER">
+              <PropertyRef Name="WARD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSONINFO_MATDANMATHAKMASTER">
+          <End Role="MATDANMATHAKMASTER" Type="Self.MATDANMATHAKMASTER" Multiplicity="0..1" />
+          <End Role="PERSONINFO" Type="Self.PERSONINFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MATDANMATHAKMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PERSONINFO">
+              <PropertyRef Name="MATDAN_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SOCIETYMASTER_MATDANMATHAKMASTER">
+          <End Role="MATDANMATHAKMASTER" Type="Self.MATDANMATHAKMASTER" Multiplicity="0..1" />
+          <End Role="SOCIETYMASTER" Type="Self.SOCIETYMASTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MATDANMATHAKMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SOCIETYMASTER">
+              <PropertyRef Name="MATDAN_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSONINFO_SOCIETYMASTER">
+          <End Role="SOCIETYMASTER" Type="Self.SOCIETYMASTER" Multiplicity="0..1" />
+          <End Role="PERSONINFO" Type="Self.PERSONINFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SOCIETYMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PERSONINFO">
+              <PropertyRef Name="SOCIETY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSONINFO_WARDMASTER">
+          <End Role="WARDMASTER" Type="Self.WARDMASTER" Multiplicity="0..1" />
+          <End Role="PERSONINFO" Type="Self.PERSONINFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WARDMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PERSONINFO">
+              <PropertyRef Name="WARD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RIGHTMASTER_RESOURCEMASTER">
+          <End Role="RESOURCEMASTER" Type="Self.RESOURCEMASTER" Multiplicity="0..1" />
+          <End Role="RIGHTMASTER" Type="Self.RIGHTMASTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RESOURCEMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RIGHTMASTER">
+              <PropertyRef Name="RESOURCE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RIGHTMASTER_RIGHTMASTER">
+          <End Role="RIGHTMASTER" Type="Self.RIGHTMASTER" Multiplicity="1" />
+          <End Role="RIGHTMASTER1" Type="Self.RIGHTMASTER" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="RIGHTMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RIGHTMASTER1">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RIGHTMASTER_ROLEMASTER">
+          <End Role="ROLEMASTER" Type="Self.ROLEMASTER" Multiplicity="0..1" />
+          <End Role="RIGHTMASTER" Type="Self.RIGHTMASTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROLEMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RIGHTMASTER">
+              <PropertyRef Name="ROLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USERMASTER_ROLEMASTER">
+          <End Role="ROLEMASTER" Type="Self.ROLEMASTER" Multiplicity="0..1" />
+          <End Role="USERMASTER" Type="Self.USERMASTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROLEMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="USERMASTER">
+              <PropertyRef Name="ROLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SOCIETYMASTER_WARDMASTER">
+          <End Role="WARDMASTER" Type="Self.WARDMASTER" Multiplicity="0..1" />
+          <End Role="SOCIETYMASTER" Type="Self.SOCIETYMASTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WARDMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SOCIETYMASTER">
+              <PropertyRef Name="WARD_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WARDMASTER_USERMASTER">
+          <End Role="USERMASTER" Type="Self.USERMASTER" Multiplicity="0..1" />
+          <End Role="WARDMASTER" Type="Self.WARDMASTER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERMASTER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="WARDMASTER">
+              <PropertyRef Name="CREATED_BY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WMEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BOOTHMASTERs" EntityType="Self.BOOTHMASTER" />
+          <EntitySet Name="MATDANMATHAKMASTERs" EntityType="Self.MATDANMATHAKMASTER" />
+          <EntitySet Name="PERSONINFOes" EntityType="Self.PERSONINFO" />
+          <EntitySet Name="RESOURCEMASTERs" EntityType="Self.RESOURCEMASTER" />
+          <EntitySet Name="RIGHTMASTERs" EntityType="Self.RIGHTMASTER" />
+          <EntitySet Name="ROLEMASTERs" EntityType="Self.ROLEMASTER" />
+          <EntitySet Name="SOCIETYMASTERs" EntityType="Self.SOCIETYMASTER" />
+          <EntitySet Name="USERMASTERs" EntityType="Self.USERMASTER" />
+          <EntitySet Name="WARDMASTERs" EntityType="Self.WARDMASTER" />
+          <AssociationSet Name="FK_BOOTHMASTER_MATDANMATHAKMASTER" Association="Self.FK_BOOTHMASTER_MATDANMATHAKMASTER">
+            <End Role="MATDANMATHAKMASTER" EntitySet="MATDANMATHAKMASTERs" />
+            <End Role="BOOTHMASTER" EntitySet="BOOTHMASTERs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BOOTHMASTER_USERMASTER" Association="Self.FK_BOOTHMASTER_USERMASTER">
+            <End Role="USERMASTER" EntitySet="USERMASTERs" />
+            <End Role="BOOTHMASTER" EntitySet="BOOTHMASTERs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BOOTHMASTER_WARDMASTER" Association="Self.FK_BOOTHMASTER_WARDMASTER">
+            <End Role="WARDMASTER" EntitySet="WARDMASTERs" />
+            <End Role="BOOTHMASTER" EntitySet="BOOTHMASTERs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSONINFO_BOOTHMASTER" Association="Self.FK_PERSONINFO_BOOTHMASTER">
+            <End Role="BOOTHMASTER" EntitySet="BOOTHMASTERs" />
+            <End Role="PERSONINFO" EntitySet="PERSONINFOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SOCIETYMASTER_BOOTHMASTER" Association="Self.FK_SOCIETYMASTER_BOOTHMASTER">
+            <End Role="BOOTHMASTER" EntitySet="BOOTHMASTERs" />
+            <End Role="SOCIETYMASTER" EntitySet="SOCIETYMASTERs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MATDANMATHAKMASTER_USERMASTER" Association="Self.FK_MATDANMATHAKMASTER_USERMASTER">
+            <End Role="USERMASTER" EntitySet="USERMASTERs" />
+            <End Role="MATDANMATHAKMASTER" EntitySet="MATDANMATHAKMASTERs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MATDANMATHAKMASTER_WARDMASTER" Association="Self.FK_MATDANMATHAKMASTER_WARDMASTER">
+            <End Role="WARDMASTER" EntitySet="WARDMASTERs" />
+            <End Role="MATDANMATHAKMASTER" EntitySet="MATDANMATHAKMASTERs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSONINFO_MATDANMATHAKMASTER" Association="Self.FK_PERSONINFO_MATDANMATHAKMASTER">
+            <End Role="MATDANMATHAKMASTER" EntitySet="MATDANMATHAKMASTERs" />
+            <End Role="PERSONINFO" EntitySet="PERSONINFOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SOCIETYMASTER_MATDANMATHAKMASTER" Association="Self.FK_SOCIETYMASTER_MATDANMATHAKMASTER">
+            <End Role="MATDANMATHAKMASTER" EntitySet="MATDANMATHAKMASTERs" />
+            <End Role="SOCIETYMASTER" EntitySet="SOCIETYMASTERs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSONINFO_SOCIETYMASTER" Association="Self.FK_PERSONINFO_SOCIETYMASTER">
+            <End Role="SOCIETYMASTER" EntitySet="SOCIETYMASTERs" />
+            <End Role="PERSONINFO" EntitySet="PERSONINFOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSONINFO_WARDMASTER" Association="Self.FK_PERSONINFO_WARDMASTER">
+            <End Role="WARDMASTER" EntitySet="WARDMASTERs" />
+            <End Role="PERSONINFO" EntitySet="PERSONINFOes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RIGHTMASTER_RESOURCEMASTER" Association="Self.FK_RIGHTMASTER_RESOURCEMASTER">
+            <End Role="RESOURCEMASTER" EntitySet="RESOURCEMASTERs" />
+            <End Role="RIGHTMASTER" EntitySet="RIGHTMASTERs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RIGHTMASTER_RIGHTMASTER" Association="Self.FK_RIGHTMASTER_RIGHTMASTER">
+            <End Role="RIGHTMASTER" EntitySet="RIGHTMASTERs" />
+            <End Role="RIGHTMASTER1" EntitySet="RIGHTMASTERs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RIGHTMASTER_ROLEMASTER" Association="Self.FK_RIGHTMASTER_ROLEMASTER">
+            <End Role="ROLEMASTER" EntitySet="ROLEMASTERs" />
+            <End Role="RIGHTMASTER" EntitySet="RIGHTMASTERs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USERMASTER_ROLEMASTER" Association="Self.FK_USERMASTER_ROLEMASTER">
+            <End Role="ROLEMASTER" EntitySet="ROLEMASTERs" />
+            <End Role="USERMASTER" EntitySet="USERMASTERs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SOCIETYMASTER_WARDMASTER" Association="Self.FK_SOCIETYMASTER_WARDMASTER">
+            <End Role="WARDMASTER" EntitySet="WARDMASTERs" />
+            <End Role="SOCIETYMASTER" EntitySet="SOCIETYMASTERs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WARDMASTER_USERMASTER" Association="Self.FK_WARDMASTER_USERMASTER">
+            <End Role="USERMASTER" EntitySet="USERMASTERs" />
+            <End Role="WARDMASTER" EntitySet="WARDMASTERs" />
+          </AssociationSet>
+          <FunctionImport Name="FUNC_SEARCH_BOOTH" IsComposable="true" ReturnType="Collection(WMModel.FUNC_SEARCH_BOOTH_Result)">
+            <Parameter Name="searchVal" Mode="In" Type="String" />
+            <Parameter Name="primaryId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="FUNC_SEARCH_MATDANMATHAK" IsComposable="true" ReturnType="Collection(WMModel.FUNC_SEARCH_MATDANMATHAK_Result)">
+            <Parameter Name="searchVal" Mode="In" Type="String" />
+            <Parameter Name="primaryId" Mode="In" Type="Int32" />
+            <Parameter Name="wardId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="FUNC_SEARCH_PERSONINFO" IsComposable="true" ReturnType="Collection(WMModel.FUNC_SEARCH_PERSONINFO_Result)">
+            <Parameter Name="searchVal" Mode="In" Type="String" />
+            <Parameter Name="primaryId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="FUNC_SEARCH_SOCIETY" IsComposable="true" ReturnType="Collection(WMModel.FUNC_SEARCH_SOCIETY_Result)">
+            <Parameter Name="searchVal" Mode="In" Type="String" />
+            <Parameter Name="primaryId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="FUNC_SEARCH_USERMASTER" IsComposable="true" ReturnType="Collection(WMModel.FUNC_SEARCH_USERMASTER_Result)">
+            <Parameter Name="searchVal" Mode="In" Type="String" />
+            <Parameter Name="primaryId" Mode="In" Type="Int32" />
+            <Parameter Name="roleId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="FUNC_SEARCH_WARD" IsComposable="true" ReturnType="Collection(WMModel.FUNC_SEARCH_WARD_Result)">
+            <Parameter Name="searchVal" Mode="In" Type="String" />
+            <Parameter Name="primaryId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="PROC_CREATE_RESOURCE">
+            <Parameter Name="RESOURCE_NAME" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PROC_GET_ALL_BOOTH" ReturnType="Collection(WMModel.PROC_GET_ALL_BOOTH_Result)">
+            <Parameter Name="boothId" Mode="In" Type="Int32" />
+            <Parameter Name="searchVal" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PROC_GET_ALL_MATDANMATHAK" ReturnType="Collection(WMModel.PROC_GET_ALL_MATDANMATHAK_Result)">
+            <Parameter Name="matdanId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="PROC_GET_VOTING_DATA" ReturnType="Collection(WMModel.PROC_GET_VOTING_DATA_Result)">
+            <Parameter Name="seachVal" Mode="In" Type="String" />
+            <Parameter Name="wardId" Mode="In" Type="Int32" />
+            <Parameter Name="matdanId" Mode="In" Type="Int32" />
+            <Parameter Name="boothNumber" Mode="In" Type="Int32" />
+            <Parameter Name="societyId" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="PROC_GET_ALL_BOOTH_Result">
+          <Property Type="Int32" Name="PrimaryId" Nullable="false" />
+          <Property Type="Int32" Name="WardId" Nullable="true" />
+          <Property Type="Int32" Name="MatdanId" Nullable="true" />
+          <Property Type="String" Name="MatdanMathakName" Nullable="true" />
+          <Property Type="String" Name="WardName" Nullable="true" />
+          <Property Type="String" Name="Address" Nullable="true" />
+          <Property Type="Int64" Name="Mobile" Nullable="true" />
+          <Property Type="Int32" Name="Booth1" Nullable="true" />
+          <Property Type="Int32" Name="Booth2" Nullable="true" />
+          <Property Type="Int32" Name="Booth3" Nullable="true" />
+          <Property Type="Int32" Name="Booth4" Nullable="true" />
+          <Property Type="Int32" Name="Booth5" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="PROC_GET_ALL_MATDANMATHAK_Result">
+          <Property Type="Int32" Name="PrimaryId" Nullable="false" />
+          <Property Type="String" Name="MatdanMathakName" Nullable="true" />
+          <Property Type="String" Name="WardName" Nullable="true" />
+          <Property Type="String" Name="Address" Nullable="true" />
+          <Property Type="Int64" Name="Mobile" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="PROC_GET_VOTING_DATA_Result">
+          <Property Type="Int32" Name="PrimaryId" Nullable="false" />
+          <Property Type="String" Name="UniqueId" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="VoterId" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Name" Nullable="true" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="Age" Nullable="true" />
+          <Property Type="String" Name="Address" Nullable="true" />
+          <Property Type="Int32" Name="WardId" Nullable="true" />
+          <Property Type="String" Name="WardName" Nullable="true" />
+          <Property Type="Int32" Name="MatdanId" Nullable="true" />
+          <Property Type="String" Name="MatdanName" Nullable="true" />
+          <Property Type="Int32" Name="BoothId" Nullable="true" />
+          <Property Type="Int32" Name="Booth1" Nullable="true" />
+          <Property Type="Int32" Name="Booth2" Nullable="true" />
+          <Property Type="Int32" Name="Booth3" Nullable="true" />
+          <Property Type="Int32" Name="Booth4" Nullable="true" />
+          <Property Type="Int32" Name="Booth5" Nullable="true" />
+          <Property Type="Int32" Name="SocetyId" Nullable="true" />
+          <Property Type="String" Name="SocietyName" Nullable="true" />
+          <Property Type="String" Name="LandMark" Nullable="true" />
+          <Property Type="Boolean" Name="IsVoted" Nullable="false" />
+          <Property Type="DateTime" Name="VoteTime" Nullable="true" Precision="23" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WMModelStoreContainer" CdmEntityContainer="WMEntities">
+          <EntitySetMapping Name="BOOTHMASTERs">
+            <EntityTypeMapping TypeName="WMModel.BOOTHMASTER">
+              <MappingFragment StoreEntitySet="BOOTHMASTER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="WARD_ID" ColumnName="WARD_ID" />
+                <ScalarProperty Name="MATDAN_ID" ColumnName="MATDAN_ID" />
+                <ScalarProperty Name="BOOTH1" ColumnName="BOOTH1" />
+                <ScalarProperty Name="BOOTH2" ColumnName="BOOTH2" />
+                <ScalarProperty Name="BOOTH3" ColumnName="BOOTH3" />
+                <ScalarProperty Name="BOOTH4" ColumnName="BOOTH4" />
+                <ScalarProperty Name="BOOTH5" ColumnName="BOOTH5" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+                <ScalarProperty Name="UPDATED_ON" ColumnName="UPDATED_ON" />
+                <ScalarProperty Name="EF1" ColumnName="EF1" />
+                <ScalarProperty Name="EF2" ColumnName="EF2" />
+                <ScalarProperty Name="EF3" ColumnName="EF3" />
+                <ScalarProperty Name="EF4" ColumnName="EF4" />
+                <ScalarProperty Name="EF5" ColumnName="EF5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MATDANMATHAKMASTERs">
+            <EntityTypeMapping TypeName="WMModel.MATDANMATHAKMASTER">
+              <MappingFragment StoreEntitySet="MATDANMATHAKMASTER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="WARD_ID" ColumnName="WARD_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+                <ScalarProperty Name="UPDATED_ON" ColumnName="UPDATED_ON" />
+                <ScalarProperty Name="EF1" ColumnName="EF1" />
+                <ScalarProperty Name="EF2" ColumnName="EF2" />
+                <ScalarProperty Name="EF3" ColumnName="EF3" />
+                <ScalarProperty Name="EF4" ColumnName="EF4" />
+                <ScalarProperty Name="EF5" ColumnName="EF5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERSONINFOes">
+            <EntityTypeMapping TypeName="WMModel.PERSONINFO">
+              <MappingFragment StoreEntitySet="PERSONINFO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UNIQUE_NUMBER" ColumnName="UNIQUE_NUMBER" />
+                <ScalarProperty Name="VOTER_ID" ColumnName="VOTER_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="MIDDLENAME" ColumnName="MIDDLENAME" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="AGE" ColumnName="AGE" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="WARD_ID" ColumnName="WARD_ID" />
+                <ScalarProperty Name="MATDAN_ID" ColumnName="MATDAN_ID" />
+                <ScalarProperty Name="BOOTH_ID" ColumnName="BOOTH_ID" />
+                <ScalarProperty Name="SOCIETY_ID" ColumnName="SOCIETY_ID" />
+                <ScalarProperty Name="ISVOTED" ColumnName="ISVOTED" />
+                <ScalarProperty Name="VOTE_TIMESTAMP" ColumnName="VOTE_TIMESTAMP" />
+                <ScalarProperty Name="EF1" ColumnName="EF1" />
+                <ScalarProperty Name="EF2" ColumnName="EF2" />
+                <ScalarProperty Name="EF3" ColumnName="EF3" />
+                <ScalarProperty Name="EF4" ColumnName="EF4" />
+                <ScalarProperty Name="EF5" ColumnName="EF5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RESOURCEMASTERs">
+            <EntityTypeMapping TypeName="WMModel.RESOURCEMASTER">
+              <MappingFragment StoreEntitySet="RESOURCEMASTER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RESOURCE_NAME" ColumnName="RESOURCE_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RIGHTMASTERs">
+            <EntityTypeMapping TypeName="WMModel.RIGHTMASTER">
+              <MappingFragment StoreEntitySet="RIGHTMASTER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+                <ScalarProperty Name="RESOURCE_ID" ColumnName="RESOURCE_ID" />
+                <ScalarProperty Name="ISADD" ColumnName="ISADD" />
+                <ScalarProperty Name="ISUPDATE" ColumnName="ISUPDATE" />
+                <ScalarProperty Name="ISVIEW" ColumnName="ISVIEW" />
+                <ScalarProperty Name="ISPRINT" ColumnName="ISPRINT" />
+                <ScalarProperty Name="ISDELETE" ColumnName="ISDELETE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROLEMASTERs">
+            <EntityTypeMapping TypeName="WMModel.ROLEMASTER">
+              <MappingFragment StoreEntitySet="ROLEMASTER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ROLE_NAME" ColumnName="ROLE_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SOCIETYMASTERs">
+            <EntityTypeMapping TypeName="WMModel.SOCIETYMASTER">
+              <MappingFragment StoreEntitySet="SOCIETYMASTER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SOCIETYNAME" ColumnName="SOCIETYNAME" />
+                <ScalarProperty Name="LANDMARK" ColumnName="LANDMARK" />
+                <ScalarProperty Name="WARD_ID" ColumnName="WARD_ID" />
+                <ScalarProperty Name="MATDAN_ID" ColumnName="MATDAN_ID" />
+                <ScalarProperty Name="BOOTH_ID" ColumnName="BOOTH_ID" />
+                <ScalarProperty Name="EF1" ColumnName="EF1" />
+                <ScalarProperty Name="EF2" ColumnName="EF2" />
+                <ScalarProperty Name="EF3" ColumnName="EF3" />
+                <ScalarProperty Name="EF4" ColumnName="EF4" />
+                <ScalarProperty Name="EF5" ColumnName="EF5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USERMASTERs">
+            <EntityTypeMapping TypeName="WMModel.USERMASTER">
+              <MappingFragment StoreEntitySet="USERMASTER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+                <ScalarProperty Name="IS_LOCKED" ColumnName="IS_LOCKED" />
+                <ScalarProperty Name="LOCKED_REASON" ColumnName="LOCKED_REASON" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="UPDATED_ON" ColumnName="UPDATED_ON" />
+                <ScalarProperty Name="EF1" ColumnName="EF1" />
+                <ScalarProperty Name="EF2" ColumnName="EF2" />
+                <ScalarProperty Name="EF3" ColumnName="EF3" />
+                <ScalarProperty Name="EF4" ColumnName="EF4" />
+                <ScalarProperty Name="EF5" ColumnName="EF5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WARDMASTERs">
+            <EntityTypeMapping TypeName="WMModel.WARDMASTER">
+              <MappingFragment StoreEntitySet="WARDMASTER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="WARDNAME" ColumnName="WARDNAME" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="CREATED_ON" ColumnName="CREATED_ON" />
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+                <ScalarProperty Name="UPDATED_ON" ColumnName="UPDATED_ON" />
+                <ScalarProperty Name="EF1" ColumnName="EF1" />
+                <ScalarProperty Name="EF2" ColumnName="EF2" />
+                <ScalarProperty Name="EF3" ColumnName="EF3" />
+                <ScalarProperty Name="EF4" ColumnName="EF4" />
+                <ScalarProperty Name="EF5" ColumnName="EF5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionName="WMModel.Store.FUNC_SEARCH_BOOTH" FunctionImportName="FUNC_SEARCH_BOOTH">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="WMModel.FUNC_SEARCH_BOOTH_Result">
+                <ScalarProperty Name="PrimaryId" ColumnName="PrimaryId" />
+                <ScalarProperty Name="WardId" ColumnName="WardId" />
+                <ScalarProperty Name="MatdanId" ColumnName="MatdanId" />
+                <ScalarProperty Name="WardName" ColumnName="WardName" />
+                <ScalarProperty Name="MatdanMathakName" ColumnName="MatdanMathakName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Booth1" ColumnName="Booth1" />
+                <ScalarProperty Name="Booth2" ColumnName="Booth2" />
+                <ScalarProperty Name="Booth3" ColumnName="Booth3" />
+                <ScalarProperty Name="Booth4" ColumnName="Booth4" />
+                <ScalarProperty Name="Booth5" ColumnName="Booth5" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionName="WMModel.Store.FUNC_SEARCH_MATDANMATHAK" FunctionImportName="FUNC_SEARCH_MATDANMATHAK">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="WMModel.FUNC_SEARCH_MATDANMATHAK_Result">
+                <ScalarProperty Name="PrimaryId" ColumnName="PrimaryId" />
+                <ScalarProperty Name="WardId" ColumnName="WardId" />
+                <ScalarProperty Name="WardName" ColumnName="WardName" />
+                <ScalarProperty Name="MatdanMathakName" ColumnName="MatdanMathakName" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionName="WMModel.Store.FUNC_SEARCH_PERSONINFO" FunctionImportName="FUNC_SEARCH_PERSONINFO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="WMModel.FUNC_SEARCH_PERSONINFO_Result">
+                <ScalarProperty Name="PrimaryId" ColumnName="PrimaryId" />
+                <ScalarProperty Name="UniqueNumber" ColumnName="UniqueNumber" />
+                <ScalarProperty Name="VoterId" ColumnName="VoterId" />
+                <ScalarProperty Name="PersonName" ColumnName="PersonName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Dob" ColumnName="Dob" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="WardId" ColumnName="WardId" />
+                <ScalarProperty Name="WardName" ColumnName="WardName" />
+                <ScalarProperty Name="MatdanId" ColumnName="MatdanId" />
+                <ScalarProperty Name="MatdanName" ColumnName="MatdanName" />
+                <ScalarProperty Name="SocietyId" ColumnName="SocietyId" />
+                <ScalarProperty Name="SocietyName" ColumnName="SocietyName" />
+                <ScalarProperty Name="BoothId" ColumnName="BoothId" />
+                <ScalarProperty Name="Booth1" ColumnName="Booth1" />
+                <ScalarProperty Name="Booth2" ColumnName="Booth2" />
+                <ScalarProperty Name="Booth3" ColumnName="Booth3" />
+                <ScalarProperty Name="Booth4" ColumnName="Booth4" />
+                <ScalarProperty Name="Booth5" ColumnName="Booth5" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionName="WMModel.Store.FUNC_SEARCH_SOCIETY" FunctionImportName="FUNC_SEARCH_SOCIETY">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="WMModel.FUNC_SEARCH_SOCIETY_Result">
+                <ScalarProperty Name="PrimaryId" ColumnName="PrimaryId" />
+                <ScalarProperty Name="SocietyName" ColumnName="SocietyName" />
+                <ScalarProperty Name="Landmark" ColumnName="Landmark" />
+                <ScalarProperty Name="WardId" ColumnName="WardId" />
+                <ScalarProperty Name="WardName" ColumnName="WardName" />
+                <ScalarProperty Name="MatdanId" ColumnName="MatdanId" />
+                <ScalarProperty Name="MardanName" ColumnName="MardanName" />
+                <ScalarProperty Name="BoothId" ColumnName="BoothId" />
+                <ScalarProperty Name="Booth1" ColumnName="Booth1" />
+                <ScalarProperty Name="Booth2" ColumnName="Booth2" />
+                <ScalarProperty Name="Booth3" ColumnName="Booth3" />
+                <ScalarProperty Name="Booth4" ColumnName="Booth4" />
+                <ScalarProperty Name="Booth5" ColumnName="Booth5" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionName="WMModel.Store.FUNC_SEARCH_USERMASTER" FunctionImportName="FUNC_SEARCH_USERMASTER">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="WMModel.FUNC_SEARCH_USERMASTER_Result">
+                <ScalarProperty Name="PrimaryId" ColumnName="PrimaryId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Is_Locked" ColumnName="Is_Locked" />
+                <ScalarProperty Name="Locked_Reason" ColumnName="Locked_Reason" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionName="WMModel.Store.FUNC_SEARCH_WARD" FunctionImportName="FUNC_SEARCH_WARD">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="WMModel.FUNC_SEARCH_WARD_Result">
+                <ScalarProperty Name="PrimaryId" ColumnName="PrimaryId" />
+                <ScalarProperty Name="WardName" ColumnName="WardName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PROC_CREATE_RESOURCE" FunctionName="WMModel.Store.PROC_CREATE_RESOURCE" />
+          <FunctionImportMapping FunctionImportName="PROC_GET_ALL_BOOTH" FunctionName="WMModel.Store.PROC_GET_ALL_BOOTH">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="WMModel.PROC_GET_ALL_BOOTH_Result">
+                <ScalarProperty Name="PrimaryId" ColumnName="PrimaryId" />
+                <ScalarProperty Name="WardId" ColumnName="WardId" />
+                <ScalarProperty Name="MatdanId" ColumnName="MatdanId" />
+                <ScalarProperty Name="MatdanMathakName" ColumnName="MatdanMathakName" />
+                <ScalarProperty Name="WardName" ColumnName="WardName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Booth1" ColumnName="Booth1" />
+                <ScalarProperty Name="Booth2" ColumnName="Booth2" />
+                <ScalarProperty Name="Booth3" ColumnName="Booth3" />
+                <ScalarProperty Name="Booth4" ColumnName="Booth4" />
+                <ScalarProperty Name="Booth5" ColumnName="Booth5" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PROC_GET_ALL_MATDANMATHAK" FunctionName="WMModel.Store.PROC_GET_ALL_MATDANMATHAK">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="WMModel.PROC_GET_ALL_MATDANMATHAK_Result">
+                <ScalarProperty Name="PrimaryId" ColumnName="PrimaryId" />
+                <ScalarProperty Name="MatdanMathakName" ColumnName="MatdanMathakName" />
+                <ScalarProperty Name="WardName" ColumnName="WardName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PROC_GET_VOTING_DATA" FunctionName="WMModel.Store.PROC_GET_VOTING_DATA">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="WMModel.PROC_GET_VOTING_DATA_Result">
+                <ScalarProperty Name="PrimaryId" ColumnName="PrimaryId" />
+                <ScalarProperty Name="UniqueId" ColumnName="UniqueId" />
+                <ScalarProperty Name="VoterId" ColumnName="VoterId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="WardId" ColumnName="WardId" />
+                <ScalarProperty Name="WardName" ColumnName="WardName" />
+                <ScalarProperty Name="MatdanId" ColumnName="MatdanId" />
+                <ScalarProperty Name="MatdanName" ColumnName="MatdanName" />
+                <ScalarProperty Name="BoothId" ColumnName="BoothId" />
+                <ScalarProperty Name="Booth1" ColumnName="Booth1" />
+                <ScalarProperty Name="Booth2" ColumnName="Booth2" />
+                <ScalarProperty Name="Booth3" ColumnName="Booth3" />
+                <ScalarProperty Name="Booth4" ColumnName="Booth4" />
+                <ScalarProperty Name="Booth5" ColumnName="Booth5" />
+                <ScalarProperty Name="SocetyId" ColumnName="SocetyId" />
+                <ScalarProperty Name="SocietyName" ColumnName="SocietyName" />
+                <ScalarProperty Name="LandMark" ColumnName="LandMark" />
+                <ScalarProperty Name="IsVoted" ColumnName="IsVoted" />
+                <ScalarProperty Name="VoteTime" ColumnName="VoteTime" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

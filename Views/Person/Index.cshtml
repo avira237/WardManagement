@@ -1,0 +1,139 @@
+﻿@{ ViewBag.Title = "Index"; }
+<head>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/WardMaster.css" />
+    <link rel="stylesheet" href="~/css/MatdanMathak.css" />
+    <link rel="stylesheet" href="~/css/CSS_datatable.css" />
+</head>
+<body>
+    <div class="body">
+        <form method="post" name="frmPerson" class="form-inline" id="frmPerson">
+            <div class="c1">
+                <h6>PERSON INFORMATION</h6>
+            </div>
+            <div class="container border border-dark p-2 mt-2 pl-lg-4">
+                <div class="row">
+                    <div class="col-12 form-inline" style=" height:50px;">
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <input type="hidden" class="form-control" id="ID" name="ID">
+                            <label for="UNIQUENUMBER" class="text-dark col-5 d-flex justify-content-end" id="lbl">UNIQUE NUMBER :</label>
+                            <input placeholder="UNIQUE NUMBER" required="" type="text" id="UNIQUENUMBER" name="UNIQUENUMBER" class="form-control col-6" />
+                        </div>
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="VOTERID" class="text-dark col-3 d-flex justify-content-end" id="lbl">VOTER ID :</label>
+                            <input placeholder="VOTER ID" required="" type="text" id="VOTERID" name="VOTERID" class="col-6 form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 form-inline" style=" height:50px;">
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="NAME" class="text-dark col-5 d-flex justify-content-end" id="lbl">NAME :</label>
+                            <input placeholder="PERSON NAME" required="" type="text" id="NAME" name="NAME" class="form-control col-6" />
+                        </div>
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="GENDER" class="text-dark col-3 d-flex justify-content-end" id="lbl">GENDER :</label>
+                            <input type="radio" id="Male" required="" name="GENDER" value="Male" />   <label for="GENDER" class="text-dark" id="lbl" style="margin:4px 0px 8px 4px;">MALE</label>
+                            <input type="radio" required="" id="Female" name="GENDER" value="Female" style="margin-left:25px;" /> <label for="GENDER" class="text-dark" id="lbl" style="margin:4px 0px 8px 4px;">FEMALE</label>
+                            <input type="radio" id="Other" required="" name="GENDER" value="Other" style="margin-left:25px;" />   <label for="GENDER" class="text-dark" id="lbl" style="margin:4px 0px 8px 4px;">OTHER</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 form-inline" style=" height:50px;">
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="DOB" class="text-dark col-5 d-flex justify-content-end" id="lbl">DOB :</label>
+                            <input placeholder="DOB" type="date" id="DOB" name="DOB" class="form-control col-6" style="font-size:12px;" />
+                        </div>
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="AGE" class="text-dark col-3 d-flex justify-content-end" id="lbl">AGE :</label>
+                            <input placeholder="AGE" required="" type="text" id="AGE" name="AGE" class="form-control col-6" style="text-align:left" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 form-inline" style=" height:50px;">
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="ADDRESS" class="text-dark col-5 d-flex justify-content-end" id="lbl">ADDRESS :</label>
+                            <textarea required="" class="form-control col-6" id="ADDRESS" name="ADDRESS" rows="3" cols="50" placeholder="ADDRESS" style="font-size:12px;letter-spacing:1px; text-transform:uppercase;"></textarea>
+                        </div>
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="WARDID" class="text-dark col-3 d-flex justify-content-end" id="lbl">WARD NAME :</label>
+                            <select required="" style="font-size:11px;text-align:left;" class="form-control col-6" id="WARDID" name="WARDID"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12 form-inline" style=" height:50px;">
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="MATDANID" class="text-dark col-5 d-flex justify-content-end" id="lbl">MATDAN NAME :</label>
+                            <select required="" style="font-size:11px;text-align:left;" class="form-control col-6" id="MATDANID" name="MATDANID"></select>
+                        </div>
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="BOOTHID" class="text-dark col-3 d-flex justify-content-end" id="lbl">BOOTH NO :</label>
+                            <select style="font-size:11px;text-align:left;" class="form-control col-6" id="BOOTHID" name="BOOTHID"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 form-inline" style=" height:50px;">
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="SOCIETYID" class="text-dark col-5 d-flex justify-content-end" id="lbl">SOCIETY NAME :</label>
+                            <select style="font-size:11px;text-align:left;" class="form-control col-6" id="SOCIETYID" name="SOCIETYID"></select>
+                        </div>
+                        <div class="col-6 form-inline" style="height:50px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-success b2" id="btnsave" name="btnsave">
+                            <i class="fa fa-check-circle" aria-hidden="true"></i>
+                            Save
+                        </button>
+                        <button class="btn btn-outline-secondary b2" id="btnload" name="btnload">
+                            <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                            Loading
+                        </button>
+                        <button class="btn btn-success b2" id="btnupdate" name="btnupdate">
+                            <i class="fa fa-check" aria-hidden="true"></i>
+                            Update
+                        </button>
+                        <button class="btn b1" type="reset" id="btnreset">
+                            <i class="fa fa-undo" aria-hidden="true"></i>
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="container-fluid dtborder" style="width: 90%;height:100%; margin: auto;margin-top: 20px;margin-bottom: 20px;padding: 10px;padding-bottom:10px;padding-right:10px;text-align: center;">
+            <table id="Persontbl" class=" table-striped table-bordered cell-border order-column nowrap table-responsive table-responsive-md table-responsive-sm" style="width:100%;margin:auto;">
+                <thead>
+                    <tr>
+                        <th>ACTION</th>
+                        <th>UNIQUE NUMBER</th>
+                        <th>VOTER ID</th>
+                        <th>NAME</th>
+                        <th>GENDER</th>
+                        <th>DOB</th>
+                        <th>AGE</th>
+                        <th>SOCIETY NAME</th>
+                        <th>ADDRESS</th>
+                        <th>WARD NAME</th>
+                        <th>MATDAN NAME</th>
+                        <th>BOOTH NO</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <link rel="stylesheet" href="~/css/CSS_datatable.css" />
+    @* <link rel="stylesheet" href="~/Content/DataTables/css/jquery.dataTables.css" />*@
+    <link rel="stylesheet" href="~/Content/DataTables/css/dataTables.bootstrap4.min.css" />
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Scripts/pagination.js"></script>
+    <script src="~/Scripts/Person/Index.js"></script>
+</body>

@@ -1,0 +1,54 @@
+@{ ViewBag.Title = "Index"; }
+<head>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/WardMaster.css" />
+    <link rel="stylesheet" href="~/css/MatdanMathak.css" />
+    <link rel="stylesheet" href="~/css/CSS_datatable.css" />
+</head>
+<body>
+    <div class="body">
+        <form method="post" name="frmchart" class="form-inline" id="frmchart">
+            <div class="c1">
+                <h6>CHART MASTER</h6>
+            </div>
+            <div class="container border border-dark p-2 mt-2 pl-lg-4">
+                <div class="row" style="margin-top: 15px;">
+                    <div class="col-12 form-inline" style=" height:50px;">
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="WARD_ID" class="text-dark col-5 d-flex justify-content-end" id="lbl">WARDNAME:</label>
+                            <input type="hidden" class="form-control" id="ID" name="ID">
+                            <select required="" style="font-size:11px;text-align:left;" class="form-control col-6" id="WARDID" name="WARDID"></select>
+                        </div>
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="MATDAN_ID" class="text-dark col-5 d-flex justify-content-end" id="lbl">MATDANMATHAK NAME :</label>
+                            <select class="form-control col-6" id="MATDANID" name="MATDANID" style="font-size:11px;" required=""></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 15px;">
+                    <div class="col-12 form-inline" style=" height:50px;">
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="MATDANID" class="text-dark col-5 d-flex justify-content-end" id="lbl">BOOTH NO :</label>
+                            <select required="" style="font-size:11px;text-align:left;" class="form-control col-6" id="BOOTHID" name="BOOTHID"></select>
+                        </div>
+                        <div class="col-6 form-inline" style="height:50px;">
+                            <label for="SOCIETYID" class="text-dark col-5 d-flex justify-content-end" id="lbl">SOCIETY NAME :</label>
+                            <select style="font-size:11px;text-align:left;" class="form-control col-6" id="SOCIETYID" name="SOCIETYID"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="container">
+            <div class="row ">
+                <div id="chart_container" class="col-12 dtborder dtbooth " style="overflow-x:scroll !important;overflow-y:hidden;width: 100%; height: 500px; margin: auto; margin-top: 20px; margin-bottom: 20px; text-align: center;">
+                    <span style="font-size:50px;" id="loadindIcon"><i class="fa fa-circle-o-notch fa-spin" aria-hidden="true" style="margin-top:200px;"></i></span>
+                    <canvas id="bar_chart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/Chart.min.js"></script>
+    <script src="~/Scripts/Chart/Index.js"></script>
+</body>

@@ -1,0 +1,55 @@
+﻿.body {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: Tahoma;
+}
+
+.body:before {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+    background-color: #282828;
+    background-size: 16px 16px;
+}
+
+.login-form {
+position: fixed;
+top: 45%;
+left: 50%;
+transform: translate(-50%,-50%);
+width: 550px;
+height: 450px;
+padding: 80px 40px;
+margin: 40px 20px;
+box-sizing: border-box;
+background-color: #ffffff;
+font-family: Tahoma;
+}
+
+.login-form h2 {
+    margin: 0 0 20px;
+    padding: 0 0 20px;
+    color: #212529;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 25px;
+    transform: scale(.8, 1);
+    font-weight: bold;
+}
+
+.login-form label {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    line-height: 300%;
+        
+}
+
+.login-form input {
+    margin-bottom: 20px;
+    line-height: 300%;
+    font-size:13px;
+}
